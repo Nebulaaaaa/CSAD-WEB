@@ -1,0 +1,43 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: PopsLight;
+    src: url('./fonts/PoppinsLight.ttf');
+}
+@font-face {
+    font-family: PopsMed;
+    src: url('./fonts/PoppinsMedium.ttf');
+}
+@font-face {
+    font-family: PopsReg;
+    src: url('./fonts/PoppinsRegular.ttf');
+}
+@font-face {
+    font-family: PopsBold;
+    src: url('./fonts/PoppinsSemiBold.ttf')
+}
+
+body {
+    font-family: PopsLight;
+}
+
+.header {
+    background: linear-gradient(#F0F0F0, #FFFFFF, #F0F0F0);
+}
+
+.footer {
+    background: #2D2D2D;
+}
+
+nav {
+    min-height: 10vh;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
