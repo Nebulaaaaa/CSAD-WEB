@@ -36,6 +36,8 @@ body {
 nav {
     min-height: 10vh;
     width: 100%;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
     margin: auto;
     display: flex;
     justify-content: space-between;
