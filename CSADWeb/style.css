@@ -36,6 +36,8 @@ body {
 nav {
     min-height: 10vh;
     width: 100%;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -111,6 +113,7 @@ li a {
 
 .class1-img {
     display: inline-block;
+<<<<<<< HEAD
     position: relative;
     width: 1500px;
     height: 1000px;
@@ -129,3 +132,9 @@ li a {
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
+=======
+    margin-bottom: 50px;
+    margin-left: 1000px;
+    transform: skewY(-2.5deg); 
+}
+>>>>>>> 8cfd70c7bd588c5ddfd07d1b9d6b4f42639a2a86
