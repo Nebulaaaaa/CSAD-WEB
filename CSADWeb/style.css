@@ -21,16 +21,29 @@
     src: url('./fonts/PoppinsSemiBold.ttf')
 }
 
-body {
+html, body {
     font-family: PopsLight;
+    height: 100%;
+    width: 100%;
 }
 
 .header {
     background: linear-gradient(#F0F0F0, #FFFFFF, #F0F0F0);
 }
 
-.footer {
+footer {
     background: #2D2D2D;
+}
+
+.nav-link1 {
+    font-family: PopsMed;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2vw;
+    text-decoration: none;
+    text-align: center;
+    color: #000000;
+    text-shadow: 0vh 0.4vh 0.4vh rgba(0, 0, 0, 0.25);
 }
 
 nav {
@@ -43,91 +56,134 @@ nav {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(0deg, #F0F0F0 0%, #FFFFFF 50.52%, #F0F0F0 100%);
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0vh 0.5vh 0.5vh rgba(0, 0, 0, 0.25);
 }
 
-.nav-link {
-    font-family: PopsMed;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    text-decoration: none;
-    line-height: 54px;
+.nav-link2 {
     text-align: center;
-    color: #000000;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.cover {
-    width: 100%;
-    height: 100%;
-    display: block;
+    padding: 2vh;
+    text-decoration: none;
 }
 
 ul {
     list-style-type: none;
 }
 
-li {
+.nav-links li {
     float: left;
 }
 
-li a {
-    text-align: center;
-    padding: 16px;
+.signup {
+    float: left;
     text-decoration: none;
 }
 
-.mission {
+.titlecover {
+    width: 135vh;
+    height: 100%;
+    display: inline-block;
+    background: radial-gradient(circle, #FAFAF5 0%, #F2EFE2 100%);
+    box-shadow: inset 0.4vh 0.4vh 1vh rgba(0, 0, 0, 0.25);
+}
+
+.form {    
+    margin-top: 4.5%;
+    margin-left: 4%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.title1 {
+    padding-top: 15%;
+    padding-left: 20%;
+    font-family: PopsBold;
+    font-style: normal;
+    font-size: 5vw;
+    text-shadow: 0vh 0.4vh 0.4vh rgba(0, 0, 0, 0.35);
+}
+
+.title2 {
     font-family: PopsMed;
     font-style: normal;
+    font-weight: bold;
+    font-size: 2.7vw;
+    color: #000000;   
+    margin-bottom: 10%;
+}
+
+p {
+    padding-left: 20%;
+    font-family: PopsReg;
+    font-style: normal;
     font-weight: normal;
-    font-size: 90px;
-    text-align: center;
-    color: #000000;
+    font-size: 1.5vw;
+    color: #8D8D8D;
+}
+
+.userinfo {
+    padding-left: 2vh;
+    width: 37vh;
+    height: 5vh;
+    background: radial-gradient(circle, rgba(226, 226, 226, 0) 0%, rgba(226, 226, 226, 0.4) 100%);
+    border: 0.1vh solid #000000;
+    box-sizing: border-box;
+    border-radius: 2vh;
+    margin-bottom: 3vh;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-family: PopsReg;
+    font-size: 1vw;
+}
+
+.signup-signin{
+/*    50% 50% at 50% 50%, #F9F8F2 0%, #F2EFE2 100%;*/
+    font-family: PopsReg;
+    float: right;
+    width: 10vh;
+    height: 5vh;
+    background: radial-gradient(circle, #F9F8F2 0%, #F2EFE2 100%);
+    border: 0.1vh solid #979797;
+    box-sizing: border-box;
+    border-radius: 2vh;
+}
+
+footer a {
+    text-decoration: none;
+    color: #F4F4F4;
+    font-size: 2.7vh;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.column-title {
+    font-family: PopsMed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.7vh;
+    line-height: 45px;
+    color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.middle img {
-    width: 400px;
-    height: 600px;
-    left: 880px;
-    top: 1112px;
-    border: 5px solid rgba(141, 141, 141, 0.5);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+.footer-section {
+    display: flex;
 }
 
-.desc {
-    width: 575px;
-    height: 180px;
-    left: 151.31px;
-    top: 1136.83px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 45px;
-    color: #000000;
+.column {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 6.7%;
+    padding-left: 6.7%;
+    min-width: 12.5rem;
+    text-align: center;
 }
 
-.class1-img {
-    display: inline-block;
-    position: relative;
-    width: 1500px;
-    height: 1000px;
-    background: red;
-    box-sizing: border-box;
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-}
-
-.class1-img img {
-    position: absolute;
-    top: 5px; /* equal to border thickness */
-    left: 5px; /* equal to border thickness */
-    width: 1490px; /* container height - (border thickness * 2) */
-    height: 990px; /* container height - (border thickness * 2) */
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+.instagram-logo {
+    filter: brightness(0) invert(1);
+    vertical-align: middle;
+    width: 3vh;
+    height: 3vh;
 }
