@@ -36,6 +36,9 @@ footer {
 }
 
 .nav-link1 {
+    display: block;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     font-family: PopsMed;
     font-style: normal;
     font-weight: 600;
@@ -48,6 +51,7 @@ footer {
 
 nav {
     min-height: 10vh;
+    height: 10vh;
     width: 100%;
     padding-right: 2.5%;
     padding-left: 2.5%;
@@ -61,8 +65,14 @@ nav {
 
 .nav-link2 {
     text-align: center;
-    padding: 2vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
     text-decoration: none;
+    display: block;
+}
+
+.logo a img {
+    display: block;
 }
 
 ul {
@@ -73,9 +83,20 @@ ul {
     float: left;
 }
 
+.question {
+    font-size: 1.6vh;
+    float: left;
+    display: block;
+}
+
 .signup {
+    width: 15vh;
+    height: 5vh;
+    font-size: 1.6vh;
     float: left;
     text-decoration: none;
+    color: #2386b0;
+    display: block;
 }
 
 .titlecover {
@@ -91,6 +112,7 @@ ul {
     margin-left: 4%;
     display: inline-block;
     vertical-align: top;
+    position: absolute;
 }
 
 .title1 {
@@ -103,6 +125,7 @@ ul {
 }
 
 .title2 {
+    display: fixed;
     font-family: PopsMed;
     font-style: normal;
     font-weight: bold;
@@ -111,7 +134,7 @@ ul {
     margin-bottom: 10%;
 }
 
-p {
+.titlecover p {
     padding-left: 20%;
     font-family: PopsReg;
     font-style: normal;
@@ -129,6 +152,7 @@ p {
     box-sizing: border-box;
     border-radius: 2vh;
     margin-bottom: 3vh;
+    display: block;
 }
 
 input,
@@ -138,7 +162,7 @@ input::-webkit-input-placeholder {
 }
 
 .signup-signin{
-/*    50% 50% at 50% 50%, #F9F8F2 0%, #F2EFE2 100%;*/
+    margin-top: 5vh;
     font-family: PopsReg;
     float: right;
     width: 10vh;
@@ -147,24 +171,26 @@ input::-webkit-input-placeholder {
     border: 0.1vh solid #979797;
     box-sizing: border-box;
     border-radius: 2vh;
+    display: block;
 }
 
 footer a {
     text-decoration: none;
     color: #F4F4F4;
     font-size: 2.7vh;
+    display: block;
 }
 
 a:hover {
     text-decoration: underline;
 }
+
 .column-title {
     font-family: PopsMed;
     font-style: normal;
-    font-weight: bold;
-    font-size: 3.5vh;
+    font-size: 3.4vh;
     color: #FFFFFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0vh 0.4vh 0.4vh rgba(0, 0, 0, 0.25);
 }
 
 .footer-section {
@@ -172,12 +198,12 @@ a:hover {
 }
 
 .column {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    padding-right: 6.7%;
-    padding-left: 6.7%;
-    min-width: 12.5rem;
+    padding-right: 5vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    width: 25%;
     text-align: center;
+    display: block;
 }
 
 .instagram-logo {

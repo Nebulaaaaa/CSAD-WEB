@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Forum</title>
+        <title>Register</title>
         <link rel="stylesheet" href="./stylelogin.css" />
     </head>
     <body>
@@ -33,13 +33,13 @@
                 </div>
                 <div class="form">
                     <h1 class="title2">Register</h1>
-                    <form action="register.php" method="post" >
+                    <form action="register.php" method="post">
                         <div>
-                            <input class="userinfo" type="email" placeholder="Email" name="email" required> <br>
-                            <input class="userinfo" type="text" placeholder="Username" name="username" required> <br>
-                            <input class="userinfo" type="password" placeholder="Password" name="password" required> <br>
-                            <input class="userinfo" type="password" placeholder="Re-enter Password" name="confirmpassword" required> <br>
-                            <input class="signup-signin" class="signup" type="submit" name="signup" value="Sing Up">
+                            <input class="userinfo" type="email" placeholder="Email" name="email" required> <p/>
+                            <input class="userinfo" type="text" placeholder="Username" name="username" required> <p/>
+                            <input class="userinfo" type="password" placeholder="Password" name="password" required> <p/>
+                            <input class="userinfo" type="password" placeholder="Re-enter Password" name="confirmpassword" required> <p/>
+                            <input class="signup-signin" type="submit" name="signup" value="Sign Up">
                         </div>
                     </form>
                 </div>
