@@ -212,3 +212,16 @@ a:hover {
     width: 3vh;
     height: 3vh;
 }
+
+.error {
+    float: left;
+    width: 92%; 
+    margin: 0 auto; 
+    padding: 1vh; 
+    border: 0.1vh solid #a94442; 
+    color: #a94442; 
+    background: #f2dede; 
+    border-radius: 2vh; 
+    text-align: left;
+    margin-bottom: 3vh;
+}

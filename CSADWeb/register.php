@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,11 +35,12 @@
                 <div class="form">
                     <h1 class="title2">Register</h1>
                     <form action="register.php" method="post">
+                        <?php include('errors.php'); ?>
                         <div>
-                            <input class="userinfo" type="email" placeholder="Email" name="email" required> <p/>
-                            <input class="userinfo" type="text" placeholder="Username" name="username" required> <p/>
-                            <input class="userinfo" type="password" placeholder="Password" name="password" required> <p/>
-                            <input class="userinfo" type="password" placeholder="Re-enter Password" name="confirmpassword" required> <p/>
+                            <input class="userinfo" type="email" placeholder="Email" name="email"> <p/>
+                            <input class="userinfo" type="text" placeholder="Username" name="username"> <p/>
+                            <input class="userinfo" type="password" placeholder="Password" name="password"> <p/>
+                            <input class="userinfo" type="password" placeholder="Re-enter Password" name="confirmpassword"> <p/>
                             <input class="signup-signin" type="submit" name="signup" value="Sign Up">
                         </div>
                     </form>
