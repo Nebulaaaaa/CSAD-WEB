@@ -1,119 +1,235 @@
+<?php
+    session_start(); 
+    
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['email']);
+        header("location: login.php");
+    }
+
+    $conn = new mysqli('localhost:3308', 'root', '', 'seniors');
+
+    if (isset($_POST['save'])) {
+        $uID = $conn->real_escape_string($_POST['uID']);
+        $ratedIndex = $conn->real_escape_string($_POST['ratedIndex']);
+        $ratedIndex++;
+
+        if (!$uID) {
+            $conn->query("INSERT INTO stars_class1 (rateIndex) VALUES ('$ratedIndex')");
+            $sql = $conn->query("SELECT id FROM stars_class1 ORDER BY id DESC LIMIT 1");
+            $uData = $sql->fetch_assoc();
+            $uID = $uData['id'];
+        } else {
+            $conn->query("UPDATE stars_class1 SET rateIndex='$ratedIndex' WHERE id='$uID'");
+        }
+
+        exit(json_encode(array('id' => $uID)));
+    }
+    
+    $result = $conn->query("SELECT count(*) as total from stars_class1");
+    $idData = $result->fetch_assoc();
+    $idTotal = $idData['total'];
+    
+    $sql = $conn->query("SELECT id FROM stars_class1");
+    $numR = $sql->num_rows;
+
+    $sql = $conn->query("SELECT SUM(rateIndex) AS total FROM stars_class1");
+    $rData = $sql->fetch_array();
+    $total = $rData['total'];
+
+    $avg = $total / $numR;
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylemain.css">
-    <title>Windows 10 Essentials</title>
-</head>
-<body>
-<header class="header">
-    <nav class="nav_bar">
-      <div class="logo">
-        <a href="index.html"><img style="width: 60px; height: 60px;" src="img/logo.png" alt="logo" /></a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="" class="nav-link">Classes</a></li>
-        <li><a href="" class="nav-link">FAQs</a></li>
-        <li><a href="" class="nav-link">Contact Us</a></li>
-        <li><a href="" class="nav-link">Login</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <div class="class-upper-container">
-        <div class="class-title">Windows 10 Essentials</div>
-        <div class="class-catchphrase">Achieve tech literacy in mere weeks</div>
-        <div class="ratings-container">
-            <div class="ratings-stars">
-                <span class="rating-star checked"></span>
-                <span class="rating-star checked"></span>
-                <span class="rating-star checked"></span>
-                <span class="rating-star checked"></span>
-                <span class="rating-star"></span>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styleclasses.css">
+        <script src="https://kit.fontawesome.com/981eb9e0f8.js" crossorigin="anonymous"></script>
+        <title>Windows 10 Essentials</title>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav_bar">
+                <div class="logo">
+                    <a href="index.php">
+                        <img
+                        style="width: 6vh; height: 6vh;"
+                        src="img/logo.png"
+                        alt="logo"/>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
+                    <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
+                    <li><a href="" class="nav-link1 nav-link2">Contact Us</a></li>
+                    
+                    <?php  if (!isset($_SESSION['email'])) : ?>
+                        <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
+                    <?php endif ?>
+                    
+                    <?php  if (isset($_SESSION['email'])) : ?>
+                        <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
+                    <?php endif ?>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="class-upper-container">
+                <div class="shadow"></div>
+                <div class="class-title">Windows 10 Essentials</div>
+                <div class="class-catchphrase">Achieve tech literacy in mere weeks</div>
+                <div class="ratings-container">
+                    <div class="ratings-stars">
+                        <i class="fa fa-star fa-2x" style="margin-left: 11vh" data-index="0"></i>
+                        <i class="fa fa-star fa-2x" data-index="1"></i>
+                        <i class="fa fa-star fa-2x" data-index="2"></i>
+                        <i class="fa fa-star fa-2x" data-index="3"></i>
+                        <i class="fa fa-star fa-2x" data-index="4"></i>
+                    </div>
+                    <div class="ratings-text">
+                        <?php echo number_format(round($avg,2), 1, '.', '') . " / " . "5.0"?>
+                        <br>
+                        <span class="ratings-total">
+                            <?php 
+                                if($idTotal == 1) {
+                                    echo "(" . $idTotal . " Rating)";
+                                } else {
+                                    echo "(" . $idTotal . " Ratings)";
+                                }
+                            ?>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="ratings-text">
-                <span class="ratings-decimal">4.0/5.0</span>
-                <span class="ratings-total">(253 ratings)</span>
+            <div id="container">
+                <div class="class-lower-container">
+                    <div class="class-desc-box">
+                        <div class="desc-title">
+                            What you will learn:
+                        </div>
+                        <p class="syllabus-left">
+                        - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum. Ridiculus mus mauris vitae ultricies. Augue eget arcu dictum varius duis at consectetur lorem. Pretium lectus quam id leo in vitae turpis.
+                        </p>
+                        <p class="syllabus-right">
+                        - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum. Ridiculus mus mauris vitae ultricies. Augue eget arcu dictum varius duis at consectetur lorem. Pretium lectus quam id leo in vitae turpis.
+                        </p>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="img-gallery">
+                        <img src="img/bottom-pic-1.jpg" alt="Windows10Essentials" class="class-1">
+                    </div>
+                    <div class="class-card-text-container">
+                        <div class="class-card-text">
+                            <div class="price">$50</div>
+                            <div class="includes">Includes</div>
+                            <span class="class-package">
+                                Weekly 2 hours lesson on available days
+                                Pre-paid Learning Materials
+                                Certificate of Completion
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <input type="button" class="enroll-now-1" value="Enroll Now">
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="class-lower-container">
-        <div class="class-desc-box">
-            <div class="desc-title">
-                What you will learn:
-            </div>
-            <p class="syllabus-left">
-                - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum. Ridiculus mus mauris vitae ultricies. Augue eget arcu dictum varius duis at consectetur lorem. Pretium lectus quam id leo in vitae turpis.
-            </p>
-            <p class="syllabus-right">
-                - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum. Ridiculus mus mauris vitae ultricies. Augue eget arcu dictum varius duis at consectetur lorem. Pretium lectus quam id leo in vitae turpis.
-            </p>
-        </div>
-        <div class="button-container">
-            <input type="button" class="enroll-now-1" value="Enroll Now">
-        </div>
-    </div>
-    <div class="class-card">
-        <div class="img-gallery">
-            <img src="" alt="Windows10Essentials" class="class-1">
-        </div>
-        <div class="class-card-text-container">
-            <div class="class-card-text">
-                <div class="price">$50</div>
-                <div class="includes">Includes</div>
-                <span class="class-package">
-                    Weekly 2 hours lesson on available days
-                    Pre-paid Learning Materials
-                    Certificate of Completion
-                </span>
-            </div>
-        </div>
-    </div>
-  </main>
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="wrapper">
-        <div class="wrapper-container">
-          <div class="column">
-            <h5 class="footer-heading">Services</h5>
-            <ul>
-              <li>
-                <a href="">Classes</a>
-              </li>
-            </ul>
-          </div>
-          <div class="column">
-            <h5 class="footer-heading">Seniors Initialize</h5>
-            <ul>
-              <li>
-                <a href="">About Us</a>
-              </li>
-              <li>
-                <a href="">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div class="column">
-            <h5 class="footer-heading">Community</h5>
-            <ul>
-              <li>
-                <a href="">Forums</a>
-              </li>
-            </ul>
-          </div>
-          <div class="column">
-            <h5 class="footer-heading">Connections</h5>
-            <img src="instagram.svg" alt="instagram" class="instagram-logo">
-            <ul>
-              <li>
-                <a href="">Instagram</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
+        </main>
+        <footer>
+            <section class="footer-section">
+                <div class="column">
+                    <h2 class="column-title">Services</h2>
+                    <ul>
+                        <li><a href="#">Classes</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2 class="column-title">Seniors Initialize</h2>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2 class="column-title">Community</h2>
+                    <ul>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2 class="column-title">Connections</h2>
+                    <ul>
+                        <li><a href="#"><img src="img/instagram-logo.svg" alt="instagram" class="instagram-logo"> Instagram</a></li>
+                    </ul>
+                </div>
+            </section>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script>
+            var ratedIndex = -1, uID = 0;
+
+            $(document).ready(function () {
+                resetStarColors();
+
+                if (localStorage.getItem('ratedIndex') != null) {
+                    setStars(parseInt(localStorage.getItem('ratedIndex')));
+                    uID = localStorage.getItem('uID');
+                }
+
+                $('.fa-star').on('click', function () {
+                    <?php  if (isset($_SESSION['email'])) : ?>
+                        ratedIndex = parseInt($(this).data('index'));
+                        localStorage.setItem('ratedIndex', ratedIndex);
+                        saveToTheDB();
+                    <?php else: ?>
+                        alert("Please login to rate this class!");
+                        setStars(ratedIndex);
+                    <?php endif ?>
+                });
+
+                $('.fa-star').mouseover(function () {
+                    resetStarColors();
+                    var currentIndex = parseInt($(this).data('index'));
+                    setStars(currentIndex);
+                });
+
+                $('.fa-star').mouseleave(function () {
+                    resetStarColors();
+                    setStars(parseInt(localStorage.getItem('ratedIndex')));
+                    uID = localStorage.getItem('uID');
+
+                    if (ratedIndex != -1) {
+                        setStars(ratedIndex);
+                    }
+                });
+            });
+
+            function saveToTheDB() {
+                $.ajax({
+                   url: "class1.php",
+                   method: "POST",
+                   dataType: 'json',
+                   data: {
+                       save: 1,
+                       uID: uID,
+                       ratedIndex: ratedIndex
+                   }, success: function (r) {
+                        uID = r.id;
+                        localStorage.setItem('uID', uID);
+                   }
+                });
+            }
+
+            function setStars(max) {
+                for (var i=0; i <= max; i++)
+                    $('.fa-star:eq('+i+')').css('color', 'yellow');
+            }
+
+            function resetStarColors() {
+                $('.fa-star').css('color', 'white');
+            }
+        </script>
+    </body>
 </html>

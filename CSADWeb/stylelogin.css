@@ -33,6 +33,7 @@ html, body, main, section {
 
 footer {
     background: #2D2D2D;
+    bottom: 0;
 }
 
 .nav-link1 {
@@ -50,8 +51,8 @@ footer {
 }
 
 nav {
-    min-height: 10vh;
-    height: 10vh;
+    min-height: 10%;
+    height: 10%;
     width: 100%;
     padding-right: 2.5%;
     padding-left: 2.5%;
@@ -84,7 +85,7 @@ ul {
 }
 
 .question {
-    font-size: 1.6vh;
+    font-size: 2.3vh;
     float: left;
     display: block;
 }
@@ -92,7 +93,7 @@ ul {
 .signup {
     width: 15vh;
     height: 5vh;
-    font-size: 1.6vh;
+    font-size: 2.3vh;
     float: left;
     text-decoration: none;
     color: #2386b0;
@@ -145,8 +146,8 @@ ul {
 
 .userinfo {
     padding-left: 2vh;
-    width: 37vh;
-    height: 5vh;
+    width: 45vh;
+    height: 6vh;
     background: radial-gradient(circle, rgba(226, 226, 226, 0) 0%, rgba(226, 226, 226, 0.4) 100%);
     border: 0.1vh solid #000000;
     box-sizing: border-box;
@@ -158,15 +159,19 @@ ul {
 input,
 input::-webkit-input-placeholder {
     font-family: PopsReg;
-    font-size: 1vw;
+    font-size: 1.3vw;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="submit"]:focus, input[type="text"]:focus {
+  outline: none;
 }
 
 .signup-signin{
     margin-top: 5vh;
     font-family: PopsReg;
     float: right;
-    width: 10vh;
-    height: 5vh;
+    width: 13vh;
+    height: 6vh;
     background: radial-gradient(circle, #F9F8F2 0%, #F2EFE2 100%);
     border: 0.1vh solid #979797;
     box-sizing: border-box;
@@ -215,7 +220,7 @@ a:hover {
 
 .error {
     float: left;
-    width: 92%; 
+    width: 45vh;
     margin: 0 auto; 
     padding: 1vh; 
     border: 0.1vh solid #a94442; 

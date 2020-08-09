@@ -1,44 +1,163 @@
 <?php 
     session_start(); 
-
-    if (!isset($_SESSION['username'])) {
-        $_SESSION['msg'] = "You must log in first";
-        header('location: login.php');
-    }
+    
     if (isset($_GET['logout'])) {
         session_destroy();
-        unset($_SESSION['username']);
+        unset($_SESSION['email']);
         header("location: login.php");
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Seniors Initalize</title>
+        <link rel="stylesheet" href="./stylemain.css" />
     </head>
     <body>
-        <div class="header">
-            <h2>Home Page</h2>
-        </div>
-        <div class="content">
-            <!-- notification message -->
-            <?php if (isset($_SESSION['success'])) : ?>
-            <div class="error success" >
-                <h3>
-                    <?php 
-                        echo $_SESSION['success']; 
-                        unset($_SESSION['success']);
-                    ?>
-                </h3>
-            </div>
-            <?php endif ?>
-
-            <!-- logged in user information -->
-            <?php  if (isset($_SESSION['username'])) : ?>
-                <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-                <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-            <?php endif ?>
-        </div>		
+        <header class="header">
+            <nav class="nav_bar">
+                <div class="logo">
+                    <a href="index.php">
+                        <img
+                        style="width: 6vh; height: 6vh;"
+                        src="img/logo.png"
+                        alt="logo"/>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
+                    <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
+                    <li><a href="contactus.html" class="nav-link1 nav-link2">Contact Us</a></li>
+                    
+                    <?php  if (!isset($_SESSION['email'])) : ?>
+                        <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
+                    <?php endif ?>
+                    
+                    <?php  if (isset($_SESSION['email'])) : ?>
+                        <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
+                    <?php endif ?>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="top">
+                <div class="container-header">
+                    <img src="img/header-pic-1.jpg" alt="cover" class="cover" />
+                    <div class="shadow"></div>
+                    <img
+                    src="img/seniorsinitializelogo.png"
+                    alt="biglogo"
+                    class="biglogo"/>
+                </div>
+            </section>
+            <section class="middle">
+                <div class="missiontitle">
+                    <h1 class="mission">Lifelong Learning</h1>
+                </div>
+                <div class="desc">
+                    <p>
+                      We at Seniors Initialize believe technology assist us in our daily
+                      lives and that seniors shouldn't be left behind in the age of
+                      technology.
+                    </p>
+                    <br><br>
+                    <p>
+                      That's why we offer state-of-the-art technology classes for seniors
+                      at a modest fee. These classes will equip seniors with various
+                      everyday life skills to ease their lives.
+                    </p>
+                </div>
+                <div class="middle-img">
+                    <img src="img/middle-pic-1.jpg" alt="middle-pic-1" />
+                </div>
+            </section>
+            <section class="bottom">
+                <div class="classes">
+                    <div class="classtitle">
+                        <h1>Our Classes</h1>
+                        <p>Click on the images for more<br>details on the class</p>
+                    </div>
+                </div>
+                <div class="class1">
+                    <div class="class1-img">
+                        <a href="class1.php">
+                            <img src="img/bottom-pic-1.jpg" alt="class1"/>
+                        </a>
+                    </div>
+                    <div class="class1-desc">
+                        <h3>Windows 10 Essentials</h3>
+                        <p>
+                          Windows 10 Essentials is our comprehensive operating systems
+                          class. Seniors will be taught basic tasks such as creating files,
+                          storing files and using various applications. Topics like security
+                          will also be lightly touched upon.
+                        </p>
+                    </div>
+                </div>
+                <div class="class2">
+                    <div class="class2-img">
+                        <a href="class2.php">
+                            <img src="img/bottom-pic-2.jpg" alt="class2"/>
+                        </a>
+                    </div>
+                    <div class="class2-desc">
+                        <h3>Mobile Applications</h3>
+                        <p>
+                          In our Mobile Applications class, seniors will learn to simplify
+                          their lives with the help of their phones. Topics taught include
+                          downloading apps, identifying and capturing QR codes and various
+                          life-hacks.
+                        </p>
+                    </div>
+                </div>
+                <div class="class3">
+                    <div class="class3-img">
+                        <a href="class3.php">
+                            <img src="img/bottom-pic-3.jpg" alt="class3"/>
+                        </a>
+                    </div>
+                    <div class="class3-desc">
+                        <h3>Internet Fundamentals</h3>
+                        <p>
+                          Internet Fundamentals teaches the skill you are using right now.
+                          Seniors will be taught a myraid of activities that includes but
+                          not limited to surfing the web, troubleshooting, spotting scams.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section class="footer-section">
+                <div class="column">
+                    <h2 class="column-title">Services</h2>
+                    <ul>
+                        <li><a href="#">Classes</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2 class="column-title">Seniors Initialize</h2>
+                    <ul>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2 class="column-title">Community</h2>
+                    <ul>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2 class="column-title">Connections</h2>
+                    <ul>
+                        <li><a href="#"><img src="img/instagram-logo.svg" alt="instagram" class="instagram-logo"> Instagram</a></li>
+                    </ul>
+                </div>
+            </section>
+        </footer>
     </body>
 </html>
+

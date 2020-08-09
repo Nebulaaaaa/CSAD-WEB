@@ -7,7 +7,7 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost:3308', 'root', '', 'accounts');
+$db = mysqli_connect('localhost:3308', 'root', '', 'seniors');
 
 // REGISTER USER
 if (isset($_POST['signup'])) {
@@ -23,7 +23,7 @@ if (isset($_POST['signup'])) {
     if(empty($email)) { array_push($errors, "Email is required"); }
     if(empty($password_1)) { array_push($errors, "Password is required"); }
     if($password_1 != $password_2) {
-          array_push($errors, "The two passwords do not match");
+          array_push($errors, "The two passwords do not match.");
     }
 
     // first check the database to make sure 
@@ -34,11 +34,11 @@ if (isset($_POST['signup'])) {
   
     if ($user) { // if user exists
         if ($user['username'] === $username) {
-          array_push($errors, "This username already exists");
+          array_push($errors, "This username already exists.");
         }
 
         if ($user['email'] === $email) {
-          array_push($errors, "This Email already exists");
+          array_push($errors, "This Email already exists.");
         }
     }
 
@@ -49,7 +49,7 @@ if (isset($_POST['signup'])) {
         $query = "INSERT INTO users (username, email, password) 
                           VALUES('$username', '$email', '$password')";
         mysqli_query($db, $query);
-        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
         $_SESSION['success'] = "You are now logged in";
         header('location: index.php');
     }
@@ -60,10 +60,10 @@ if (isset($_POST['signin'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
     if(empty($email)) {
-        array_push($errors, "Email is required");
+        array_push($errors, "Email is required.");
     }
     if(empty($password)) {
-        array_push($errors, "Password is required");
+        array_push($errors, "Password is required.");
     }
 
     if(count($errors) == 0) {
@@ -74,9 +74,9 @@ if (isset($_POST['signin'])) {
         if(mysqli_num_rows($results) == 1) {
             $_SESSION['email'] = $email;
             $_SESSION['success'] = "You are now logged in";
-            header('location: index.php');
+            header("location: index.php");
         } else {
-            array_push($errors, "You have entered an ");
+            array_push($errors, "You have entered an invalid email or password.");
         }
     }
 }
