@@ -11,7 +11,7 @@
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
-                    <a href="index.php">
+                    <a href="index.html">
                         <img
                         style="width: 6vh; height: 6vh;"
                         src="img/logo.png"
@@ -19,17 +19,10 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
-                    <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
-                    <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
-
-                    <?php  if (!isset($_SESSION['email'])) : ?>
-                            <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
-                    <?php endif ?>
-
-                    <?php  if (isset($_SESSION['email'])) : ?>
-                        <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
-                    <?php endif ?>
+                <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
+                <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
+                <li><a href="" class="nav-link1 nav-link2">Contact Us</a></li>
+                <li><a href="login.php" class="nav-link1 nav-link2">Login</a></li>
                 </ul>
             </nav>
         </header>
@@ -59,14 +52,14 @@
                 <div class="column">
                     <h2 class="column-title">Services</h2>
                     <ul>
-                        <li><a href="index.php #classlink">Classes</a></li>
+                        <li><a href="#">Classes</a></li>
                     </ul>
                 </div>
                 <div class="column">
                     <h2 class="column-title">Seniors Initialize</h2>
                     <ul>
-                        <li><a href="aboutus.php">About Us</a></li>
-                        <li><a href="contactus.php">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="column">

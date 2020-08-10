@@ -2,12 +2,7 @@
 session_start();
 
 // initializing variables
-$username = "";
-$email    = "";
-$errors = array(); 
-
-// connect to the database
-$db = mysqli_connect('localhost:3308', 'root', '', 'seniors');
+include ('dbcon.php');
 
 // REGISTER USER
 if (isset($_POST['signup'])) {
@@ -50,6 +45,7 @@ if (isset($_POST['signup'])) {
                           VALUES('$username', '$email', '$password')";
         mysqli_query($db, $query);
         $_SESSION['email'] = $email;
+        $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
         header('location: index.php');
     }
@@ -58,6 +54,7 @@ if (isset($_POST['signup'])) {
 if (isset($_POST['signin'])) {
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
+    $username = mysqli_real_escape_string($db, $_POST['username']);
 
     if(empty($email)) {
         array_push($errors, "Email is required.");
@@ -73,6 +70,7 @@ if (isset($_POST['signin'])) {
         
         if(mysqli_num_rows($results) == 1) {
             $_SESSION['email'] = $email;
+            $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
             header("location: index.php");
         } else {
@@ -80,3 +78,4 @@ if (isset($_POST['signin'])) {
         }
     }
 }
+
