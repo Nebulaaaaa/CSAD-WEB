@@ -167,12 +167,17 @@ a:hover {
     -webkit-text-stroke-color: black;
 }
 
+.ratings-stars {
+    font-size: 2.7vh;
+}
+
 .ratings-container {
     width: fit-content;
 }
 
 .ratings-text {
     font-family: PopsReg;
+    font-size: 2.7vh;
     margin-top: 1vh;
     margin-left: 11vh;
     text-align: center;
@@ -208,7 +213,7 @@ a:hover {
 .class-lower-container {
     margin-top: 6vh;
     width: 46.5%;
-    display:inline-block
+    display: inline-block;
 }
 
 .class-card {
@@ -224,17 +229,16 @@ a:hover {
 }
 
 .img-gallery img{
-    max-width: 80%;
-    max-height: 80%;
+    width: 80%;
+    height: 80%;
     display: block;
     padding-top: 6%;
     margin: 0 auto;
 }
 
 .class-card-text-container {
-    max-width: 80%;
-    max-height: 80%;
-    display: block;
+    width: 80%;
+    height: 80%;
     padding-top: 5%;
     padding-bottom: 8%;
     margin: 0 auto;
@@ -258,7 +262,7 @@ a:hover {
 
 .button-container {
     width: 25%;
-    display:inline-block;
+    display: inline-block;
     vertical-align: bottom;
     margin-left: 18%;
 }
@@ -271,7 +275,7 @@ a:hover {
     height: 12vh;
     width: 100%;
     background: radial-gradient(circle, #F1EFE1 0%, rgba(241, 239, 225, 0.8) 100%);
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 0.2vh solid rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     border-radius: 2vh;
 }

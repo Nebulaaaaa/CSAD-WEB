@@ -1,26 +1,39 @@
 <?php
-    session_start(); 
+    error_reporting(0);
+    
+    session_start();
     
     if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['email']);
         header("location: login.php");
     }
-
+    
     $conn = new mysqli('localhost:3308', 'root', '', 'seniors');
 
     if (isset($_POST['save'])) {
         $uID = $conn->real_escape_string($_POST['uID']);
         $ratedIndex = $conn->real_escape_string($_POST['ratedIndex']);
+        $email = mysqli_real_escape_string($conn, $_SESSION['email']); 
         $ratedIndex++;
+        
+        $num = 1;
+        
+        $query = "SELECT class3 FROM users";
+        $res = mysqli_query($conn, $query);
+        while($row = mysqli_fetch_array($res)) {
+            if ($row['class3'] == 0) {
+                $conn->query("INSERT INTO stars_class3 (rateIndex) VALUES ('$ratedIndex')");
+                $sql = $conn->query("SELECT id FROM stars_class3 ORDER BY id DESC LIMIT 1");
+                $uData = $sql->fetch_assoc();
+                $uID = $uData['id'];
 
-        if (!$uID) {
-            $conn->query("INSERT INTO stars_class3 (rateIndex) VALUES ('$ratedIndex')");
-            $sql = $conn->query("SELECT id FROM stars_class3 ORDER BY id DESC LIMIT 1");
-            $uData = $sql->fetch_assoc();
-            $uID = $uData['id'];
-        } else {
-            $conn->query("UPDATE stars_class3 SET rateIndex='$ratedIndex' WHERE id='$uID'");
+                //var_dump($num);
+                $class3 = "UPDATE users SET class3='1' WHERE email='$email'"; 
+                mysqli_query($conn, $class3);
+            } else {
+                $conn->query("UPDATE stars_class3 SET rateIndex='$ratedIndex' WHERE id='$uID'");
+            }
         }
 
         exit(json_encode(array('id' => $uID)));
@@ -38,6 +51,8 @@
     $total = $rData['total'];
 
     $avg = $total / $numR;
+    
+    $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +77,7 @@
                 <ul class="nav-links">
                     <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
                     <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
-                    <li><a href="" class="nav-link1 nav-link2">Contact Us</a></li>
+                    <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
                     
                     <?php  if (!isset($_SESSION['email'])) : ?>
                         <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
@@ -88,8 +103,14 @@
                         <i class="fa fa-star fa-2x" data-index="4"></i>
                     </div>
                     <div class="ratings-text">
-                        <?php echo number_format(round($avg,2), 1, '.', '') . " / " . "5.0"?>
-                        <br>
+                        <?php 
+                            if(is_nan($avg)) {
+                                echo "0.0 / 5.0";
+                            } else {
+                                echo number_format(round($avg,2), 1, '.', '') . " / " . "5.0";
+                            }
+                        ?>
+                        <p/>
                         <span class="ratings-total">
                             <?php 
                                 if($idTotal == 1) {
@@ -118,7 +139,7 @@
                 </div>
                 <div class="class-card">
                     <div class="img-gallery">
-                        <img src="img/bottom-pic-1.jpg" alt="Windows10Essentials" class="class-1">
+                        <img src="img/bottom-pic-3.jpg" alt="Windows10Essentials" class="class-1">
                     </div>
                     <div class="class-card-text-container">
                         <div class="class-card-text">
@@ -148,8 +169,8 @@
                 <div class="column">
                     <h2 class="column-title">Seniors Initialize</h2>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="aboutus.php">About Us</a></li>
+                        <li><a href="contactus.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="column">

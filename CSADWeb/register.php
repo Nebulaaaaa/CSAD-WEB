@@ -21,7 +21,7 @@
                 <ul class="nav-links">
                     <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
                     <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
-                    <li><a href="" class="nav-link1 nav-link2">Contact Us</a></li>
+                    <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
 
                     <?php  if (!isset($_SESSION['email'])) : ?>
                             <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
@@ -65,8 +65,8 @@
                 <div class="column">
                     <h2 class="column-title">Seniors Initialize</h2>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="aboutus.php">About Us</a></li>
+                        <li><a href="contactus.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="column">

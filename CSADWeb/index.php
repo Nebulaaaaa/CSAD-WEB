@@ -29,7 +29,7 @@
                 <ul class="nav-links">
                     <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
                     <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
-                    <li><a href="contactus.html" class="nav-link1 nav-link2">Contact Us</a></li>
+                    <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
                     
                     <?php  if (!isset($_SESSION['email'])) : ?>
                         <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
@@ -79,8 +79,7 @@
                         <h1>Our Classes</h1>
                         <p>Click on the images for more<br>details on the class</p>
                     </div>
-                </div>
-                <div class="class1">
+                </div><div class="class1">
                     <div class="class1-img">
                         <a href="class1.php">
                             <img src="img/bottom-pic-1.jpg" alt="class1"/>
@@ -140,8 +139,8 @@
                 <div class="column">
                     <h2 class="column-title">Seniors Initialize</h2>
                     <ul>
-                        <li><a href="aboutus.html">About Us</a></li>
-                        <li><a href="contactus.html">Contact</a></li>
+                        <li><a href="aboutus.php">About Us</a></li>
+                        <li><a href="contactus.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="column">
