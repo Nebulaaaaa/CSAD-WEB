@@ -11,7 +11,7 @@
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img
                         style="width: 6vh; height: 6vh;"
                         src="img/logo.png"

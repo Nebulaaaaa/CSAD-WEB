@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About Us</title>
         <link rel="stylesheet" href="styleaboutus.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     </head>
     <body>
+        <div class="wrapper">
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
@@ -27,50 +27,51 @@
             </nav>
         </header>
         <main>
+            
             <section class="aboutus-top">
                 <img src="img/group-header.jpg" alt="" class="cover"><div class="shadow"></div>
                 <div class="header-text">The Team<br>Behind<br>Seniors Initialize</div>
             </section>
             <section class="profiles">
-                <div class="intro-desc" data-aos="fade-top">
+                <div class="intro-desc">
                     We're a bunch of<br>self-achieving individuals that wants to see<br>the world change for the better. Seniors
                     Initialize is<br>our project of taking the first step.
                 </div>
-                <div>
-                    <img src="img/portrait-1.jpg" alt="" class="profile-img-left" data-aos="fade-right">
+                <div class="profile-left">
+                    <img src="img/portrait-1.jpg" alt="" class="profile-img-left">
                     <div class="left">
-                        <h3 data-aos="fade-left">Iian Khor</h3>
-                        <p class="profile-desc-right" data-aos="fade-left">
+                        <h3>Iian Khor</h3>
+                        <p class="profile-desc-right">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
                             purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
                         </p>
                     </div>
                 </div>
                 <div class="profile-right">
-                    <img src="img/portrait-2.jpg" alt="" class="profile-img-right" data-aos="fade-left">
+                    <img src="img/portrait-2.jpg" alt="" class="profile-img-right">
                     <div class="right">
-                        <h3 data-aos="fade-right">Oliver Goh</h3>
-                        <p class="profile-desc-left" data-aos="fade-right">
+                        <h3>Oliver Goh</h3>
+                        <p class="profile-desc-left">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
                             purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
                         </p>
                     </div>
                 </div>
                 <div class="profile-left">
-                    <img src="img/portrait-3.jpg" alt="" class="profile-img-left" data-aos="fade-right">
+                    <img src="img/portrait-3.jpg" alt="" class="profile-img-left">
                     <div class="left">
-                        <h3 data-aos="fade-left">Jerome Goh</h3>
-                        <p class="profile-desc-right" data-aos="fade-left">
+                        <h3>Jerome Goh</h3>
+                        <p class="profile-desc-right">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
                             purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
                         </p>
                     </div>
                 </div>
-                <div class="profile-right-bottom">
-                    <img src="img/portrait-4.jpg" alt="" class="profile-img-right" data-aos="fade-left">
+                <div class="profile-right">
+                    <img src="img/portrait-4.jpg" alt="" class="profile-img-right">
                     <div class="right">
-                        <h3 data-aos="fade-right">Muhammad Rakin</h3>
-                        <p class="profile-desc-left" data-aos="fade-right">
+                        <h3>Muhammad Rakin</h3>
+                        <p class="profile-desc-left">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
                             purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
                         </p>
@@ -78,6 +79,7 @@
                 </div>
             </section>
         </main>
+        </div>
         <footer>
             <section class="footer-section">
                 <div class="column">
@@ -107,9 +109,5 @@
                 </div>
             </section>
         </footer>
-                  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
     </body>
 </html>
