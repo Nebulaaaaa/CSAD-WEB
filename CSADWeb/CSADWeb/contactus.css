@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 30, 2020, 1:44:22 PM
+    Author     : jerom
+*/
+@font-face {
+    font-family: PopsLight;
+    src: url('./fonts/PoppinsLight.ttf');
+}
+@font-face {
+    font-family: PopsMed;
+    src: url('./fonts/PoppinsMedium.ttf');
+}
+@font-face {
+    font-family: PopsReg;
+    src: url('./fonts/PoppinsRegular.ttf');
+}
+@font-face {
+    font-family: PopsBold;
+    src: url('./fonts/PoppinsSemiBold.ttf')
+}
+
+.contactus-text {
+    font-size: 30px; 
+    font-family: PopsBold;
+    margin-top: 5vh;  
+}
+
+.upper {
+    font-size: 15px; 
+    font-family: PopsReg;    
+}
+
+.middle {
+    margin-left: 7vh;
+}
+
+.lower {
+    font-size: 15px; 
+    font-family: PopsReg;
+    margin-top: 1vh;
+}
+
+.transition-text {
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+    font-size: 14px;
+    font-family: PopsReg; 
+}
+
+.field-title {
+    font-family: PopsReg;
+    color: white;
+}
+
+.text{
+    width: 250px;
+    height: 20px;
+    box-sizing: border-box;  
+}
+
+.email1{
+    width: 250px;
+    height: 20px;
+    box-sizing: border-box; 
+}
+
+.message-box {
+  width: 750px;
+  height: 250px;
+  box-sizing: border-box;
+}
+
+.ending-text {
+    font-size: 12px;
+    font-family: PopsLight;
+    font-style: italic;
+    margin-top: 3vh;
+    color: white;
+}
+
+.container-with-margin{
+   text-align: center;
+   background: grey;
+  
+}
+
+
+
+
