@@ -19,8 +19,8 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
-                    <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
+                    <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
+                    <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
                     <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
                     
                     <?php  if (!isset($_SESSION['email'])) : ?>
@@ -59,7 +59,7 @@
                 <div class="column">
                     <h2 class="column-title">Services</h2>
                     <ul>
-                        <li><a href="#">Classes</a></li>
+                        <li><a href="index.php #classlink">Classes</a></li>
                     </ul>
                 </div>
                 <div class="column">

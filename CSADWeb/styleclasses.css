@@ -224,7 +224,7 @@ a:hover {
     box-shadow: 0.6vh 0.6vh 2vh rgba(0, 0, 0, 0.25);
     display:inline-block;
     position: absolute;
-    top: 8%;
+    top: 4%;
     margin-left: 18%;
 }
 
@@ -272,6 +272,7 @@ a:hover {
     font-style: normal;
     font-weight: 600;
     font-size: 4vh;
+    padding-top: 5%;
     height: 12vh;
     width: 100%;
     background: radial-gradient(circle, #F1EFE1 0%, rgba(241, 239, 225, 0.8) 100%);
@@ -280,6 +281,11 @@ a:hover {
     border-radius: 2vh;
 }
 
-input[type="button"]:focus {
+input[type="submit"]:focus {
   outline: none
+}
+
+.paypal-text {
+    font-family: PopsBold;
+    font-size: 2vh;
 }

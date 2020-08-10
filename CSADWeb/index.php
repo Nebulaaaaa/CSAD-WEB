@@ -28,8 +28,8 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
-                    <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
+                    <li><a href="#classlink" class="nav-link1 nav-link2">Classes</a></li>
+                    <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
                     <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
                     
                     <?php  if (!isset($_SESSION['email'])) : ?>
@@ -74,7 +74,7 @@
                     <img src="img/middle-pic-1.jpg" alt="middle-pic-1" />
                 </div>
             </section>
-            <section class="bottom">
+            <section class="bottom" id="classlink">
                 <div class="classes">
                     <div class="classtitle">
                         <h1 data-aos="fade-top">Our Classes</h1>
@@ -134,7 +134,7 @@
                 <div class="column">
                     <h2 class="column-title">Services</h2>
                     <ul>
-                        <li><a href="#">Classes</a></li>
+                        <li><a href="index.php #classlink">Classes</a></li>
                     </ul>
                 </div>
                 <div class="column">

@@ -1,3 +1,12 @@
+<?php 
+    session_start(); 
+    
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['email']);
+        header("location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,10 +29,17 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
-                <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
+                <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
+                <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
                 <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
-                <li><a href="login.php" class="nav-link1 nav-link2">Login</a></li>
+                
+                <?php  if (!isset($_SESSION['email'])) : ?>
+                    <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
+                <?php endif ?>
+
+                <?php  if (isset($_SESSION['email'])) : ?>
+                    <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
+                <?php endif ?>
                 </ul>
             </nav>
         </header>
@@ -39,7 +55,7 @@
                     Initialize is<br>our project of taking the first step.
                 </div>
                 <div class="profile-left">
-                    <img src="img/portrait-1.jpg" alt="" class="profile-img-left" data-aos="fade-right">
+                    <img src="img/portrait-1.jpeg" alt="" class="profile-img-left" data-aos="fade-right">
                     <div class="left">
                         <h3 data-aos="fade-left">Iian Khor</h3>
                         <p data-aos="fade-left" class="profile-desc-right">
@@ -49,7 +65,7 @@
                     </div>
                 </div>
                 <div class="profile-right">
-                    <img src="img/portrait-2.jpg" alt="" class="profile-img-right" data-aos="fade-left">
+                    <img src="img/portrait-2.jpeg" alt="" class="profile-img-right" data-aos="fade-left">
                     <div class="right">
                         <h3 data-aos="fade-right">Oliver Goh</h3>
                         <p data-aos="fade-right" class="profile-desc-left">
@@ -59,7 +75,7 @@
                     </div>
                 </div>
                 <div class="profile-left">
-                    <img src="img/portrait-3.jpg" alt="" class="profile-img-left" data-aos="fade-right">
+                    <img src="img/portrait-3.jpeg" alt="" class="profile-img-left" data-aos="fade-right">
                     <div class="left">
                         <h3 data-aos="fade-left">Jerome Goh</h3>
                         <p data-aos="fade-left" class="profile-desc-right">
@@ -69,7 +85,7 @@
                     </div>
                 </div>
                 <div class="profile-right">
-                    <img src="img/portrait-4.jpg" alt="" class="profile-img-right" data-aos="fade-left">
+                    <img src="img/portrait-4.jpeg" alt="" class="profile-img-right" data-aos="fade-left">
                     <div class="right">
                         <h3 data-aos="fade-right">Muhammad Rakin</h3>
                         <p data-aos="fade-right" class="profile-desc-left">
@@ -86,7 +102,7 @@
                 <div class="column">
                     <h2 class="column-title">Services</h2>
                     <ul>
-                        <li><a href="#">Classes</a></li>
+                        <li><a href="index.php #classlink">Classes</a></li>
                     </ul>
                 </div>
                 <div class="column">

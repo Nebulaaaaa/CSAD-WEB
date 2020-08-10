@@ -75,11 +75,10 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
-                    <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
+                    <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
+                    <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
                     <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
-                    
-                    <?php //echo $_SESSION['email']?>
+
                     <?php  if (!isset($_SESSION['email'])) : ?>
                         <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
                     <?php endif ?>
@@ -146,16 +145,21 @@
                         <div class="class-card-text">
                             <div class="price">$50</div>
                             <div class="includes">Includes</div>
-                            <span class="class-package">
+                            <div class="class-package">
                                 Weekly 2 hours lesson on available days
                                 Pre-paid Learning Materials
                                 Certificate of Completion
-                            </span>
+                            </div>
+                            <div class="paypal-text">
+                                [You can pay for the class digitally or you can pay physically by coming to out establishment location. For more info, please check out our Contact Us page]
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="button-container">
-                    <input type="button" class="enroll-now-1" value="Enroll Now">
+                    <form action="paypal.php">
+                        <input type="submit" class="enroll-now-1" value="Enroll Now">
+                    </form>
                 </div>
             </div>
         </main>
@@ -164,7 +168,7 @@
                 <div class="column">
                     <h2 class="column-title">Services</h2>
                     <ul>
-                        <li><a href="#">Classes</a></li>
+                        <li><a href="index.php #classlink">Classes</a></li>
                     </ul>
                 </div>
                 <div class="column">

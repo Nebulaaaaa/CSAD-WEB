@@ -4,8 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Register</title>
+        <title>Login</title>
         <link rel="stylesheet" href="./stylelogin.css" />
+        <style>
+            #paypal-button-container {
+                text-align: center;
+                padding-top: 20%;
+            }
+        </style>
     </head>
     <body>
         <header class="header">
@@ -22,7 +28,7 @@
                     <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
                     <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
                     <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
-
+                    
                     <?php  if (!isset($_SESSION['email'])) : ?>
                             <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
                     <?php endif ?>
@@ -34,25 +40,39 @@
             </nav>
         </header>
         <main>
-            <section>
-                <div class="titlecover">
-                    <h1 class="title1">Register</h1>
-                    <p>Join the wondrous community<br>behind Seniors Initialize</p>
-                </div>
-                <div class="form">
-                    <h1 class="title2">Register</h1>
-                    <form action="register.php" method="post">
-                        <?php include('errors.php'); ?>
-                        <div>
-                            <input class="userinfo" type="email" placeholder="Email" name="email"> <p/>
-                            <input class="userinfo" type="text" placeholder="Username" name="username"> <p/>
-                            <input class="userinfo" type="password" placeholder="Password" name="password"> <p/>
-                            <input class="userinfo" type="password" placeholder="Re-enter Password" name="confirmpassword"> <p/>
-                            <input class="signup-signin" type="submit" name="signup" value="Sign Up">
-                        </div>
-                    </form>
-                </div>
-            </section>
+            <!-- Set up a container element for the button -->
+            <div id="paypal-button-container"></div>
+
+            <!-- Include the PayPal JavaScript SDK -->
+            <script src="https://www.paypal.com/sdk/js?client-id=ASxlwwGEDHrsHmZDqq7gA0rTZrbLAlxzhf4rp5CERhic-1qt6VbkeM70ugJ3TK2AwbMmCGLcys9rPYUz&currency=USD"></script>
+
+            <script>
+                // Render the PayPal button into #paypal-button-container
+                paypal.Buttons({
+                    style: {
+                        color: 'gold',
+                        shape: 'pill'
+                    },
+                     // Set up the transaction
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: '10.00'
+                                }
+                            }]
+                        });
+                    },
+
+                    // Finalize the transaction
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            // Show a success message to the buyer
+                            alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                        });
+                    }
+                }).render('#paypal-button-container');
+            </script>
         </main>
         <footer>
             <section class="footer-section">
