@@ -14,7 +14,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Seniors Initalize</title>
         <link rel="stylesheet" href="./stylemain.css" />
-	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     </head>
     <body>
         <header class="header">
@@ -55,16 +54,16 @@
             </section>
             <section class="middle">
                 <div class="missiontitle">
-                    <h1 class="mission" data-aos="fade-top">Lifelong Learning</h1>
+                    <h1 class="mission">Lifelong Learning</h1>
                 </div>
                 <div class="desc">
-                    <p data-aos="fade-right">
+                    <p>
                       We at Seniors Initialize believe technology assist us in our daily
                       lives and that seniors shouldn't be left behind in the age of
                       technology.
                     </p>
                     <br><br>
-                    <p data-aos="fade-right">
+                    <p>
                       That's why we offer state-of-the-art technology classes for seniors
                       at a modest fee. These classes will equip seniors with various
                       everyday life skills to ease their lives.
@@ -77,8 +76,8 @@
             <section class="bottom">
                 <div class="classes">
                     <div class="classtitle">
-                        <h1 data-aos="fade-top">Our Classes</h1>
-                        <p data-aos="fade-top">Click on the images for more<br>details on the class</p>
+                        <h1>Our Classes</h1>
+                        <p>Click on the images for more<br>details on the class</p>
                     </div>
                 </div><div class="class1">
                     <div class="class1-img">
@@ -87,8 +86,8 @@
                         </a>
                     </div>
                     <div class="class1-desc">
-                        <h3 data-aos="fade-left">Windows 10 Essentials</h3>
-                        <p data-aos="fade-left">
+                        <h3>Windows 10 Essentials</h3>
+                        <p>
                           Windows 10 Essentials is our comprehensive operating systems
                           class. Seniors will be taught basic tasks such as creating files,
                           storing files and using various applications. Topics like security
@@ -103,8 +102,8 @@
                         </a>
                     </div>
                     <div class="class2-desc">
-                        <h3 data-aos="fade-right">Mobile Applications</h3>
-                        <p data-aos="fade-right">
+                        <h3>Mobile Applications</h3>
+                        <p>
                           In our Mobile Applications class, seniors will learn to simplify
                           their lives with the help of their phones. Topics taught include
                           downloading apps, identifying and capturing QR codes and various
@@ -119,8 +118,8 @@
                         </a>
                     </div>
                     <div class="class3-desc">
-                        <h3 data-aos="fade-left">Internet Fundamentals</h3>
-                        <p data-aos="fade-left">
+                        <h3>Internet Fundamentals</h3>
+                        <p>
                           Internet Fundamentals teaches the skill you are using right now.
                           Seniors will be taught a myraid of activities that includes but
                           not limited to surfing the web, troubleshooting, spotting scams.
@@ -158,10 +157,6 @@
                 </div>
             </section>
         </footer>
-          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
     </body>
 </html>
 
