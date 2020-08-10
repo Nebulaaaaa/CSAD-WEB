@@ -151,31 +151,94 @@ a:hover {
 
 .contactus-text {
     margin-top: 10%;
-    margin-left: 20%;
+    margin-left: 16%;
     font-family: PopsBold;
     font-size: 8vh;
-    display: inline-block;
 }
 
 .upper-text {
     width: 30%;
-    margin-left: 20%;
+    margin-left: 16%;
     font-family: PopsReg;
     font-size: 3.5vh;
-    display: block;
 }
 
 .lower-text {
     width: 30%;
     margin-top: 1%;
-    margin-left: 20%;
+    margin-left: 16%;
     font-family: PopsLight;
-    font-size: 3.5vh;   
-    display: block;
+    font-size: 3.5vh;  
 }
 
-.map {
-    
+iframe {
     float: right;
-    display: inline-block;
+    margin-right: 16%;
+    height: 43vh;
+    width: 60vh;
+    border: 0.3vh solid #000000;
+}
+
+.transition-text {
+    font-family: PopsMed;
+    font-size: 3.5vh;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.upper {
+    height: 90vh;
+    width: 100%;
+}
+
+.input-field {
+    height: 7vh;
+    width: 25vw;
+    background: #E2E2E2;
+    border: 0.2vh solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 2.5vh;
+    padding-left: 1%;
+    font-size: 3.5vh;
+}
+
+.message-box {
+    height: 40vh;
+    width: 50vw;
+    background: #E2E2E2;
+    border: 0.2vh solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 2.5vh;
+    padding-top: 1%;
+    padding-left: 1%;
+    font-size: 3.5vh;
+}
+
+input[type="email"]:focus, input[type="text"]:focus, textarea:focus {
+  outline: none;
+}
+
+.field-title {
+    padding: 1%;
+    font-family: PopsMed;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.5vh;
+    color: #FFFFFF;
+}
+
+.lower {
+    background: #424242;
+    height: 50vw;
+    text-align: center;
+}
+
+.ending-text {
+    margin-top: 3%;
+    font-family: PopsLight;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.5vh;
+    text-align: center;
+    color: #FFFFFF;
 }
