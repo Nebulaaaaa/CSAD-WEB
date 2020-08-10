@@ -5,18 +5,21 @@
         <group>
             <file>file:/C:/wamp64/www/CSADWeb/index.php</file>
             <file>file:/C:/wamp64/www/CSADWeb/class3.php</file>
+            <file>file:/C:/wamp64/www/CSADWeb/contactus.php</file>
             <file>file:/C:/wamp64/www/CSADWeb/stylemain.css</file>
             <file>file:/C:/wamp64/www/CSADWeb/class1.php</file>
-            <file>file:/C:/wamp64/www/CSADWeb/aboutus.html</file>
+            <file>file:/C:/wamp64/www/CSADWeb/img/portrait-1.jpeg</file>
+            <file>file:/C:/wamp64/www/CSADWeb/paypal.php</file>
             <file>file:/C:/wamp64/www/CSADWeb/server.php</file>
-            <file>file:/C:/wamp64/www/CSADWeb/index_test.html</file>
+            <file>file:/C:/wamp64/www/CSADWeb/img/portrait-3.jpeg</file>
+            <file>file:/C:/wamp64/www/CSADWeb/styleclasses.css</file>
+            <file>file:/C:/wamp64/www/CSADWeb/img/portrait-2.jpeg</file>
             <file>file:/C:/wamp64/www/CSADWeb/login.php</file>
             <file>file:/C:/wamp64/www/CSADWeb/aboutus.php</file>
             <file>file:/C:/wamp64/www/CSADWeb/register.php</file>
-            <file>file:/C:/wamp64/www/CSADWeb/errors.php</file>
             <file>file:/C:/wamp64/www/CSADWeb/class2.php</file>
             <file>file:/C:/wamp64/www/CSADWeb/styleaboutus.css</file>
-            <file>file:/C:/wamp64/www/CSADWeb/stylelogin.css</file>
+            <file>file:/C:/wamp64/www/CSADWeb/dbcon.php</file>
         </group>
     </open-files>
 </project-private>

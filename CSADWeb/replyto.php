@@ -2,6 +2,11 @@
 include ('content_function.php');
 include('server.php');
 addview($_GET['cid'], $_GET['scid'], $_GET['tid']);
+if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['email']);
+        header("location: login.php");
+    }
 ?>
 <html>
     <head>
@@ -28,11 +33,17 @@ addview($_GET['cid'], $_GET['scid'], $_GET['tid']);
                 <input class="search" placeholder="Search Forum" >
                 </div>>
                 <ul class="nav-links">
-                <li><a href="" class="nav-link1 nav-link2">Classes</a></li>
-                <li><a href="" class="nav-link1 nav-link2">FAQs</a></li>
-                <li><a href="" class="nav-link1 nav-link2">Contact Us</a></li>
-                <li><a href="login.php" class="nav-link1 nav-link2">Login</a></li>
-                <li><a href="Forum.php" class="nav-link1 nav-link2">Forums</a></li>
+                <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
+                <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
+                <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
+                
+                <?php  if (!isset($_SESSION['email'])) : ?>
+                    <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
+                <?php endif ?>
+
+                <?php  if (isset($_SESSION['email'])) : ?>
+                    <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
+                <?php endif ?>
                 </ul>
             </nav>
         </header>   

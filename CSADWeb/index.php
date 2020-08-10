@@ -80,7 +80,8 @@
                         <h1 data-aos="fade-top">Our Classes</h1>
                         <p data-aos="fade-top">Click on the images for more<br>details on the class</p>
                     </div>
-                </div><div class="class1">
+                </div>
+                <div class="class1">
                     <div class="class1-img">
                         <a href="class1.php">
                             <img src="img/bottom-pic-1.jpg" alt="class1"/>
@@ -164,3 +165,4 @@
     </script>
     </body>
 </html>
+

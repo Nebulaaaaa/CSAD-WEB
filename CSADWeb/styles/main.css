@@ -1,6 +1,6 @@
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 h1 a:hover {
@@ -75,7 +75,7 @@ input[type="submit"], button {
 	border: none;
 }
 
-input[type="text"],[type="password"] {
+input[type="text"],input[type="password"] {
 	border-radius: 15px;
 	width: 200px;
 	padding: 7px;
@@ -108,23 +108,46 @@ button:focus {
 table.category-table {
 	width: 100%;
 	margin-bottom: 35px;
-	font-family: Calibri;
 }
 
 table.category-table td.main-category {
-	font-size: 16pt;
+	font-size: 6vh;
 	font-weight: bold;
+        font-family: PopsBold;
 }
 
 table.category-table th {
-	font-size: 12pt;
+	font-size: 4vh;
 	font-weight: bold;
 	text-align: left;
 }
 
+.category_title {
+    font-family: PopsMed;
+    font-size: 3vh;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    border: 0.2vh solid #000;
+    border-radius: 2vh;
+    background: #FFF;
+}
+
+.num-topics {
+    font-family: PopsMed;
+    font-size: 5vh;
+    text-align: center;
+    border: 0.2vh solid #000;
+    border-radius: 100%;
+}
+
+.topic-text {
+    text-align-last: center;
+    font-family: PopsBold;
+}
+
 table.topic-table {
 	width: 100%;
-	font-family: Calibri;
 }
 
 table.topic-table th {

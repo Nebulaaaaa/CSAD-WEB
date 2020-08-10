@@ -30,7 +30,7 @@ and open the template in the editor.
     src: url('./fonts/PoppinsSemiBold.ttf')
 }
 
-html, body, main, section {
+html, body{
     font-family: PopsLight;
     height: 100%;
     width: 100%;
@@ -250,11 +250,5 @@ input {
     text-align: justify;
 }
 body {
-    
-     /*background:  url('img/pastelbg_forum2.jpg');
-       background-repeat: no-repeat;
-   
-       background-size: auto;
-       background-size: 100% 100%;*/
      background-color: beige;
 }
