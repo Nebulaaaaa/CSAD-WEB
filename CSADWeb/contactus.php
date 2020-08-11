@@ -68,6 +68,9 @@
                         <input type="email" class="input-field">
                         <div class="field-title">Message</div>
                         <textarea name="message-box" id="message" cols="30" rows="10" class="message-box"></textarea>
+                        <div class="submit-container">
+                            <input type="button" value="Submit" class="submit-button"/>
+                        </div>
                     </div>
                     <div class="ending-text">
                         Email us with any questions or inquiries or call 91234567. We would be happy to answer your<br>questions and set up a meeting with you! Stay webbing!
