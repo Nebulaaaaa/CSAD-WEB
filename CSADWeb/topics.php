@@ -17,7 +17,6 @@ if (isset($_GET['logout'])) {
        
     </head>
     <body>
-       
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
@@ -30,7 +29,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="container">
                 <input class="search" placeholder="Search Forum" >
-                </div>>
+                </div>
                 <ul class="nav-links">
                 <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
                 <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
@@ -45,18 +44,19 @@ if (isset($_GET['logout'])) {
                 <?php endif ?>
                 </ul>
             </nav>
-        </header>        
-        <?php
-        if (isset($_SESSION['username'])) {
-            echo "<div class='content'><p><a href='/CSADWeb/newtopic.php?cid=".$_GET['cid']."&scid=".$_GET['scid']."'>
-            Add new topic</a></p></div>";
-        }
-        ?>
-        
-        <div class="content">
-            <?php disptopics($_GET['cid'], $_GET['scid']); ?>
-        </div>
-        
+        </header>    
+        <main style="min-height: 100%;">
+            <?php
+            if (isset($_SESSION['username'])) {
+                echo "<div class='content'><p><a href='/CSADWeb/newtopic.php?cid=".$_GET['cid']."&scid=".$_GET['scid']."'>
+                Add new topic</a></p></div>";
+            }
+            ?>
+
+            <div class="content">
+                <?php disptopics($_GET['cid'], $_GET['scid']); ?>
+            </div>
+        </main>
         <footer>
             <section class="footer-section">
                 <div class="column">

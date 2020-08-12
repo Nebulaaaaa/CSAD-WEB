@@ -18,7 +18,6 @@ if (isset($_GET['logout'])) {
        
     </head>
     <body>
-       
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
@@ -31,7 +30,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="container">
                 <input class="search" placeholder="Search Forum" >
-                </div>>
+                </div>
                 <ul class="nav-links">
                 <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
                 <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
@@ -46,22 +45,24 @@ if (isset($_GET['logout'])) {
                 <?php endif ?>
                 </ul>
             </nav>
-        </header>        
-        <div class="content">
-			<?php 
-				if (isset($_SESSION['username'])) {
-					echo "<form action='/CSADWeb/addnewtopic.php?cid=".$_GET['cid']."&scid=".$_GET['scid']."'
-						  method='POST'>
-						  <p>Title: </p>
-						  <input type='text' id='topic' name='topic' size='100' />
-						  <p>Content: </p>
-						  <textarea id='content' name='content'></textarea><br />
-						  <input type='submit' value='add new post' /></form>";
-				} else {
-					echo "<p>please login first or <a href='/CSADWeb/register.php'>click here</a> to register.</p>";
-				}
-			?>
-        </div>
+        </header>       
+        <main style="min-height: 100%;">
+            <div class="content">
+                <?php 
+                        if (isset($_SESSION['username'])) {
+                                echo "<form action='/CSADWeb/addnewtopic.php?cid=".$_GET['cid']."&scid=".$_GET['scid']."'
+                                          method='POST'>
+                                          <p>Title: </p>
+                                          <input type='text' id='topic' name='topic' size='100' />
+                                          <p>Content: </p>
+                                          <textarea id='content' name='content'></textarea><br />
+                                          <input type='submit' value='add new post' /></form>";
+                        } else {
+                                echo "<p>please login first or <a href='/CSADWeb/register.php'>click here</a> to register.</p>";
+                        }
+                ?>
+            </div>
+        </main>
         <footer>
             <section class="footer-section">
                 <div class="column">

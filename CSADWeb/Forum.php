@@ -52,9 +52,9 @@ and open the template in the editor.
             </nav>
         </header>
 
-       
-        <?php dispcategories(); ?>
-        
+        <main>
+            <?php dispcategories(); ?>
+        </main>
         <footer>
             <section class="footer-section">
                 <div class="column">

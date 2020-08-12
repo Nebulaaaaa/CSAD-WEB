@@ -67,10 +67,11 @@ if (isset($_POST['signin'])) {
         $password = md5($password);
         $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
+        $row = $results->fetch_assoc();
         
         if(mysqli_num_rows($results) == 1) {
             $_SESSION['email'] = $email;
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $row['username'];
             $_SESSION['success'] = "You are now logged in";
             header("location: index.php");
         } else {

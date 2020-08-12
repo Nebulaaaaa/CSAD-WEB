@@ -1,6 +1,7 @@
 <?php 
 include ('content_function.php');
 include('server.php');
+
 addview($_GET['cid'], $_GET['scid'], $_GET['tid']);
 if (isset($_GET['logout'])) {
         session_destroy();
@@ -18,7 +19,6 @@ if (isset($_GET['logout'])) {
        
     </head>
     <body>
-       
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
@@ -31,7 +31,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="container">
                 <input class="search" placeholder="Search Forum" >
-                </div>>
+                </div>
                 <ul class="nav-links">
                 <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
                 <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
@@ -46,19 +46,21 @@ if (isset($_GET['logout'])) {
                 <?php endif ?>
                 </ul>
             </nav>
-        </header>   
-        <div>
-        <?php 
-        replylink($_GET['cid'], $_GET['scid'], $_GET['tid']);
-        ?>
-            
-        </div>
-        <?php 
-            disptopic($_GET['cid'], $_GET['scid'], $_GET['tid']);
-                echo "<div class='content'><p>All Replies (".countReplies($_GET['cid'], $_GET['scid'], $_GET['tid']).")
-		</p></div>";
-            dispreplies($_GET['cid'], $_GET['scid'], $_GET['tid']);
-        ?>
+        </header>  
+        <main style="min-height: 100%;">
+            <div>
+            <?php 
+            replylink($_GET['cid'], $_GET['scid'], $_GET['tid']);
+            ?>
+
+            </div>
+            <?php 
+                disptopic($_GET['cid'], $_GET['scid'], $_GET['tid']);
+                    echo "<div class='content'><p>All Replies (".countReplies($_GET['cid'], $_GET['scid'], $_GET['tid']).")
+                    </p></div>";
+                dispreplies($_GET['cid'], $_GET['scid'], $_GET['tid']);
+            ?>
+        </main>
         <footer>
             <section class="footer-section">
                 <div class="column">
@@ -88,6 +90,5 @@ if (isset($_GET['logout'])) {
                 </div>
             </section>
         </footer>
-      
     </body>
 </html>
