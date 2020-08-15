@@ -1,4 +1,5 @@
 <?php 
+    include('dbcon.php');
     session_start(); 
     
     if (isset($_GET['logout'])) {
@@ -6,6 +7,23 @@
         unset($_SESSION['email']);
         header("location: login.php");
     }
+    
+    if (isset($_POST['submit'])) {
+        $name = mysqli_real_escape_string($db, $_POST['name']);
+        $email = mysqli_real_escape_string($db, $_POST['email']);
+        $message = mysqli_real_escape_string($db, $_POST['message']);
+        // Attempt insert query execution
+        $sql = "INSERT INTO contactus (name, email, message) VALUES ('$name', '$email', '$message')";
+        if(mysqli_query($db, $sql)){
+            $message = "Message sent successfully.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        } else {
+            alert("Error! Message sent unsuccessfully.");
+        }
+    }
+
+    // Close connection
+    mysqli_close($db);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,18 +77,20 @@
                     </div>
                 </div>
             </section>
-            <section class="lower">
+            <section class="lower"style="height: 100%;">
                 <div class="container-with-margin">
                     <div class="inputs-container">
-                        <div class="field-title">Name</div>
-                        <input type="text" class="input-field">
-                        <div class="field-title">Email</div>
-                        <input type="email" class="input-field">
-                        <div class="field-title">Message</div>
-                        <textarea name="message-box" id="message" cols="30" rows="10" class="message-box"></textarea>
-                        <div class="submit-container">
-                            <input type="button" value="Submit" class="submit-button"/>
-                        </div>
+                        <form action="contactus.php" method="POST">
+                            <div class="field-title">Name</div>
+                            <input type="text" class="input-field" name="name" required>
+                            <div class="field-title">Email</div>
+                            <input type="email" class="input-field" name="email" required>
+                            <div class="field-title">Message</div>
+                            <textarea name="message" id="message" cols="30" rows="10" class="message-box" required></textarea>
+                            <div class="submit-container">
+                                <input type="submit" value="Submit" class="submit-button" name="submit"/>
+                            </div>
+                        </form>
                     </div>
                     <div class="ending-text">
                         Email us with any questions or inquiries or call 91234567. We would be happy to answer your<br>questions and set up a meeting with you! Stay webbing!
@@ -96,7 +116,7 @@
                 <div class="column">
                     <h2 class="column-title">Community</h2>
                     <ul>
-                        <li><a href="#">Forums</a></li>
+                        <li><a href="Forum.php">Forums</a></li>
                     </ul>
                 </div>
                 <div class="column">

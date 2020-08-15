@@ -15,12 +15,31 @@ if (isset($_GET['logout'])) {
         <title>Forums</title>
         <link href="Forumstyle.css" type="text/css" rel="stylesheet">
         <link href="/CSADWeb/styles/main.css" type="text/css" rel="stylesheet" /> 
-    </head>
+        <script src="//cdn.tinymce.com/4/tinymce.min.js" referrerpolicy="origin"></script>
+
+        <script>
+            tinymce.init({
+                selector: '#comment',
+                forced_root_block : 'div',
+                forced_root_block_attrs: {
+                    'class': 'main',
+                    'style': 'font-family: PopsReg;' 
+                },
+                toolbar: " undo redo | removeformat | bold italic | link | alignleft aligncenter alignright alignjustify |",
+                menubar: false
+            });
+            function validate() {
+                if ((tinymce.EditorManager.get('comment').getContent()) == '' || (tinymce.EditorManager.get('content').getContent()) == null)) {
+                    alert('Comment can not be empty.');
+                    return false;
+                }
+            }
+        </script>
     <body>
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img
                         style="width: 6vh; height: 6vh;"
                         src="img/logo.png"
@@ -46,10 +65,13 @@ if (isset($_GET['logout'])) {
             </nav>
         </header>  
         <main style="min-height: 100%;"> 
+            <div class="content">
+                <?php disptopic($_GET['cid'], $_GET['scid'], $_GET['tid']); ?>
+            </div>
             <div>
                 <?php
                     if (!isset($_SESSION['username'])) {
-                        echo "<p>please login first or <a href='/CSADWeb/register.php'>click here</a> to register.</p>";
+                        echo "<p class='login-text'>In order to comment, please <a href='/CSADWeb/login.php'>login</a> first or <a href='/CSADWeb/register.php'>click here</a> to register.</p>";
                     }
                 ?>
             </div>
@@ -58,11 +80,8 @@ if (isset($_GET['logout'])) {
                     replytopost($_GET['cid'], $_GET['scid'], $_GET['tid']);
                 }
             ?>
-            </div>
+            
         </main>
-        <div class="content">
-            <?php disptopic($_GET['cid'], $_GET['scid'], $_GET['tid']); ?>
-        </div>
         <footer>
               <section class="footer-section">
                   <div class="column">

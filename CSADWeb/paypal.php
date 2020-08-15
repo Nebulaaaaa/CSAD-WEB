@@ -1,6 +1,5 @@
 <?php 
     include('server.php'); 
-    session_start(); 
     
     if (isset($_GET['logout'])) {
         session_destroy();
@@ -101,7 +100,7 @@
                 <div class="column">
                     <h2 class="column-title">Community</h2>
                     <ul>
-                        <li><a href="#">Forums</a></li>
+                        <li><a href="Forum.php">Forums</a></li>
                     </ul>
                 </div>
                 <div class="column">

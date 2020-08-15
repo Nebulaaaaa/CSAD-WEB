@@ -22,7 +22,7 @@ if (isset($_GET['logout'])) {
         <header class="header">
             <nav class="nav_bar">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img
                         style="width: 6vh; height: 6vh;"
                         src="img/logo.png"
@@ -30,34 +30,32 @@ if (isset($_GET['logout'])) {
                     </a>
                 </div>
                 <div class="container">
-                <input class="search" placeholder="Search Forum" >
+                    <input class="search" placeholder="Search Forum" >
                 </div>
                 <ul class="nav-links">
-                <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
-                <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
-                <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
-                
-                <?php  if (!isset($_SESSION['email'])) : ?>
-                    <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
-                <?php endif ?>
+                    <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
+                    <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
+                    <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
 
-                <?php  if (isset($_SESSION['email'])) : ?>
-                    <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
-                <?php endif ?>
+                    <?php  if (!isset($_SESSION['email'])) : ?>
+                        <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
+                    <?php endif ?>
+
+                    <?php  if (isset($_SESSION['email'])) : ?>
+                        <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
+                    <?php endif ?>
                 </ul>
             </nav>
         </header>  
         <main style="min-height: 100%;">
             <div>
             <?php 
-            replylink($_GET['cid'], $_GET['scid'], $_GET['tid']);
+                replylink($_GET['cid'], $_GET['scid'], $_GET['tid']);
             ?>
-
             </div>
             <?php 
                 disptopic($_GET['cid'], $_GET['scid'], $_GET['tid']);
-                    echo "<div class='content'><p>All Replies (".countReplies($_GET['cid'], $_GET['scid'], $_GET['tid']).")
-                    </p></div>";
+                    echo "<div class='replies'><p><span>All Replies (".countReplies($_GET['cid'], $_GET['scid'], $_GET['tid']).")</span></p></div>";
                 dispreplies($_GET['cid'], $_GET['scid'], $_GET['tid']);
             ?>
         </main>

@@ -1,144 +1,155 @@
-* {
-	margin: 0;
-	padding: 0;
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1 a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 h1, h2, h3 {
-	font-family: Century Gothic;
-	font-weight: normal;
-	margin-bottom: 15px;
+    font-family: Century Gothic;
+    font-weight: normal;
+    margin-bottom: 15px;
 }
 
 div.pane {
-	width: 1000px;
-	margin: 0px auto;
+    width: 1000px;
+    margin: 0px auto;
 }
 
 div.header {
-	padding-top: 15px;
-	padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 div.loginpane {
-	width: 230px;
-	display: block;
-	position: relative;
-	float: left;
-	padding: 15px;
+    width: 230px;
+    display: block;
+    position: relative;
+    float: left;
+    padding: 15px;
 }
 
 div.forumdesc {
-	width: 700px;
-	display: block;
-	position: relative;
-	float: left;
-	padding: 15px;
+    width: 700px;
+    display: block;
+    position: relative;
+    float: left;
+    padding: 15px;
 }
 
-div.content {
-	background-color: #EFEFEF;
-	margin-top: 15px;
-	width: 970px;
-	display: block;
-	position: relative;
-	float: left;
-	padding: 15px;
+.content {
+    margin-top: 4vh;
+    width: 100%;
+}
+
+.add-new-topic {
+    font-family: PopsBold;
+    font-size: 3vh;
+    margin-top: 4vh;
+    margin-left: 5%;
+    background: white;
+    border-radius: 5vh;
+    width: fit-content;
+    padding: 2vh;
+    text-align: center;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
 }
 
 div.header h1 {
-	margin-left: 15px;
-	font-family: Century Gothic;
-	font-weight: normal;
+    margin-left: 15px;
+    font-family: Century Gothic;
+    font-weight: normal;
 }
 
 a {
-	text-decoration: none;
-	color: #0066FF;
-}
-
-p{
-	font-family: Calibri;
+    text-decoration: none;
+    color: #0066FF;
 }
 
 input[type="submit"], button {
-	border-radius: 4px;
-	color: #EFEFEF;
-	width: 200px;
-	padding: 7px;
-	font-family: Calibri;
-	background-image: linear-gradient(to bottom, #0066FF, #0099FF);
-	margin-top: 15px;
-	border: none;
 }
 
 input[type="text"],input[type="password"] {
-	border-radius: 15px;
-	width: 200px;
-	padding: 7px;
-	font-family: Arial;
-	margin-top: 15px;
-	border: none;
-	background-color: #DFDFDF;
+    border-radius: 15px;
+    width: 200px;
+    padding: 7px;
+    font-family: Arial;
+    margin-top: 15px;
+    border: none;
+    background-color: #DFDFDF;
 }
 
 input[type="text"]:focus {
-	outline-width: 0;
-	outline-style: none;
+    outline-width: 0;
+    outline-style: none;
 }
 
 input[type="password"]:focus {
-	outline-width: 0;
-	outline-style: none;
+    outline-width: 0;
+    outline-style: none;
 }
 	
 input[type="submit"]:focus {
-	outline-width: 0;
-	outline-style: none;
+    outline-width: 0;
+    outline-style: none;
 }	
 
 button:focus {
-	outline-width: 0;
-	outline-style: none;
+    outline-width: 0;
+    outline-style: none;
 }	
 
+.forum-table-background {
+    background-color: white;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
+    border-radius: 2vh;
+}
+
 table.category-table {
-	width: 100%;
-	margin-bottom: 35px;
+    margin-left: 5%;
+    width: 90%;
+    padding-bottom: 2%;
+    border-collapse: separate; 
+    border-spacing:0 2vh; 
+    overflow: hidden;
+    padding-left: 5%;
 }
 
 table.category-table td.main-category {
-	font-size: 6vh;
-	font-weight: bold;
-        font-family: PopsBold;
+    font-size: 6vh;
+    font-weight: bold;
+    font-family: PopsBold;
 }
 
 table.category-table th {
-	font-size: 4vh;
-	font-weight: bold;
-	text-align: left;
+    font-size: 4vh;
+    font-weight: bold;
+    text-align: left;
 }
 
-.category_title {
+.category-title {
     font-family: PopsMed;
     font-size: 3vh;
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 2%;
-    border: 0.2vh solid #000;
-    border-radius: 2vh;
-    background: #FFF;
+    border-radius: 5vh;
+    background: #F3F3F3;
+    width: 20%;
 }
 
 .num-topics {
     font-family: PopsMed;
     font-size: 5vh;
     text-align: center;
-    border: 0.2vh solid #000;
-    border-radius: 100%;
+    width: 5%;
 }
 
 .topic-text {
@@ -146,57 +157,272 @@ table.category-table th {
     font-family: PopsBold;
 }
 
-table.topic-table {
-	width: 100%;
+.topic-table-background {
+    background-color: white;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
+    border-radius: 2vh;
+    padding-bottom: 10vh;
 }
 
-table.topic-table th {
-	vertical-align: top;
-	text-align: left;
-	font-size: 12pt;
-	background-color: #8E8E8E;
-	padding: 4px;
+table.topic-table {
+    margin: 0 auto;
+    width: 90%;
+    border-collapse: separate; 
+    border-spacing: 0; 
+    margin-bottom: 6%;
+}
+
+.topics-table-posted, 
+.topics-table-date, 
+.topics-table-views, 
+.topics-table-replies {
+    width: 9.5%;
+    vertical-align: top;
+    text-align: center;
+    font-size: 3.5vh;
+    font-family: PopsMed;
+    padding: 5vh;
+}
+
+.topics-table-title {
+    width: 20%;
+    vertical-align: top;
+    text-align: center;
+    font-size: 3.5vh;
+    font-family: PopsMed;
+    padding: 5vh;
+}
+
+table.topic-table tr:nth-child(even) {
+    background: #DBF3FA;
 }
 
 table.topic-table td {
-	font-size: 12pt;
-	padding: 4px;
+    font-size: 3vh;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;  
 }
 
-input#topic {
-	border-radius: 15px;
-	width: 350px;
-	padding: 7px;
-	font-family: Arial;
-	margin-top: 15px;
-	border: none;
-	background-color: #DFDFDF;
+.topics-table-content {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    border-radius: 5vh;
+    background: #F5FCFF; 
 }
 
 textarea {
-	width: 350px;
-	height: 100px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+    width: 350px;
+    height: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 table.reply-table {
-	font-family: Calibri;
-	width: 100%;
+    font-family: Calibri;
+    width: 100%;
 }
 
 table.reply-table th {
-	vertical-align: top;
-	text-align: left;
-	font-size: 12pt;
+    vertical-align: top;
+    text-align: left;
+    font-size: 12pt;
 }
 
 table.reply-table td {
-	padding-left: 15px;
-	vertical-align: top;
-	margin-bottom: 5px;
+    padding-left: 15px;
+    vertical-align: top;
+    margin-bottom: 5px;
+}
+
+.post-content {
+    background-color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
+    border-radius: 2vh;
+}
+
+.reply-content {
+    background-color: white;
+    padding-bottom: 1%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
+    border-radius: 2vh;
+}
+
+.title {
+    width: fit-content;
+    padding: 1vh;
+    font-family: PopsBold;
+    font-size: 4vh;
+    background: #E8E8E8;
+    border-radius: 2vh;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.post-desc {
+    padding: 1vh;
+    font-family: PopsMed;
+    font-size: 2.7vh;
+    border-radius: 2vh;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+.poster, .replied {
+    width: fit-content;
+    padding: 1vh;
+    font-family: PopsReg;
+    font-size: 2vh;
+    background: #E8E8E8;
+    border-radius: 2vh;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.reply-link {
+    font-family: PopsBold;
+    font-size: 3vh;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    background: white;
+    border-radius: 5vh;
+    width: fit-content;
+    padding: 2vh;
+    text-align: center;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
+}
+
+.reply-content div {
+    padding: 1vh; 
+    font-family: PopsMed; 
+    font-size: 2.7vh; 
+    border-radius: 2vh; 
+    margin-right: 1%; 
+    margin-left: 1%; 
+    padding-top: 1%; 
+    margin-bottom: 1%;
+}
+
+.replies {
+    text-align: center;
+    font-family: PopsMed;
+    font-size: 4vh;
+    width: 90%; 
+    text-align: center; 
+    border-bottom: 0.3vh solid #000; 
+    line-height: 0.1em;
+    margin: 0 auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+p span {
+    background:#ffd399; 
+    padding:0 10px; 
+}
+
+.text-container {
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.comment-text, .content-text {
+    font-family: PopsBold;
+    font-size: 3vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    margin-left: 2%;
+    background: white;
+    border-radius: 5vh;
+    width: fit-content;
+    padding: 2vh;
+    text-align: center;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
+}
+
+.title-text {
+    font-family: PopsBold;
+    font-size: 3vh;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    margin-left: 2%;
+    background: white;
+    border-radius: 5vh;
+    width: fit-content;
+    padding: 2vh;
+    text-align: center;
+    box-shadow: 0vh 0vh 2vh rgba(114, 114, 113, 0.5);
+}
+
+.comment-button, .add-post-button {
+    margin-top: 2%;
+    margin-left: 2vw;
+    font-family: PopsBold;
+    font-size: 3vh;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    color: #000;
+    text-decoration:none;
+    border-radius: 5vh;
+    border: solid 0.3vh #999999;
+    background: #FFF;
+    text-align: center;
+    padding: 3vh 3vh 2.5vh;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+
+    -webkit-box-shadow: 0vh 0.9vh 0vh #999999;
+    -moz-box-shadow: 0vh 0.9vh 0vh #999999;
+    box-shadow: 0vh 0.9vh 0vh #999999;
+}
+
+.comment-button:active, .add-post-button:active{
+    -webkit-box-shadow: 0vh 0.4vh 0vh #444444;
+    -moz-box-shadow: 0vh 0.4vh 0vh #444444;
+    box-shadow: 0vh 0.4vh 0vh #444444;
+    position:relative;
+    top: 0.5vh;
+}
+
+.login-text {
+    background: rgba(229, 229, 229, 0.7);
+    padding: 5vh;
+    margin-top: 15vh;
+    font-family: PopsMed;
+    font-size: 5vh;
+    text-align: center;
+    vertical-align: middle;
+}
+
+input#topic {
+    margin-left: 2vw;
+    border-radius: 3vh;
+    width: fit-content;
+    font-family: PopsReg;
+    margin-top: 2vh;
+    border: 0.2vh solid #000;
+    background-color: #FFFFFF;
 }
