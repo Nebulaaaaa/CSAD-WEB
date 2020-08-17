@@ -109,8 +109,8 @@
                 <div class="column">
                     <h2 class="column-title">Seniors Initialize</h2>
                     <ul>
-                        <li><a href="aboutus.html">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="aboutus.php">About Us</a></li>
+                        <li><a href="contactus.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="column">

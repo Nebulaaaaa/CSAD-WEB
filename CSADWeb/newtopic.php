@@ -20,8 +20,7 @@ if (isset($_GET['logout'])) {
                 selector: '#content',
                 forced_root_block : 'div',
                 forced_root_block_attrs: {
-                    'class': 'main',
-                    'style': 'font-family: PopsReg;' 
+                    'style': 'font-family: PopsMed;' 
                 },
                 toolbar: " undo redo | removeformat | bold italic | link | alignleft aligncenter alignright alignjustify |",
                 menubar: false
@@ -70,29 +69,19 @@ if (isset($_GET['logout'])) {
                         echo "<form action='/CSADWeb/addnewtopic.php?cid=".$_GET['cid']."&scid=".$_GET['scid']."'
                                 method='POST'>
                                 <p class='title-text'>Title:</p>
-                                <input type='text' id='topic' name='topic' required/>
+                                <input type='text' id='topic' name='topic' class='topic-title-text'required/>
                                 <p class='content-text'>Content: </p>
                                 <div class='text-container'>
-                                <textarea id='content' name='content' ></textarea>
+                                <textarea id='content' name='content'></textarea>
                                 </div>
                                 <div class='comment-button-container'> 
 
                                 <input class='add-post-button' type='submit' value='Add New Post' onclick='return validate();'/></form>";
                     } else {
-                        echo "<p>Please login first or <a href='/CSADWeb/register.php'>click here</a> to register.</p>";
+                        echo "<p class='login-text' style='margin-top: 2%;'>Please login first or <a href='/CSADWeb/register.php'>click here</a> to register.</p>";
                     }
                 ?>
             </div>
-            <script>
-                function validation_form() {
-                    var content = $.trivalidation_formm(tinymce.get('#content').getContent({format: 'text'}));
-                    if(content.length == 0) {
-                        alert("Please field in your content!");
-                        return false;
-                    }
-                    return true;
-                }
-            </script>
         </main>
         <footer>
             <section class="footer-section">

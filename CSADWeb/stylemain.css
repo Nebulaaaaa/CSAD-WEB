@@ -311,3 +311,15 @@ h3 {
     font-size: 3.3vh;
     color: #8D8D8D;
 }
+
+@media screen and (max-width: 1280px) {
+    main {
+        align-items: center;
+        text-align: center;
+        float: none;
+    }
+
+    .middle {
+        flex-direction: column;
+    }
+}

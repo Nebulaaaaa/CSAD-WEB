@@ -60,11 +60,9 @@ function disptopics($cid,$scid) {
         }
         echo "</table>";
     } else {
-        echo "<p>This category has no topics yet!<a href='/CSADWeb/newtopic.php?cid=".$cid."&scid=".$scid."'>
+        echo "<p class='no-topics-text' style='margin-top: 2%;'>This category has no topics yet!<a href='/CSADWeb/newtopic.php?cid=".$cid."&scid=".$scid."'>
         Why don't you add a new topic!</a></p>";
-
     }
- 
  }
  function disptopic($cid, $scid, $tid) {
     include ('dbcon.php');
@@ -75,6 +73,7 @@ function disptopics($cid,$scid) {
     echo nl2br("<div class='post-content'><h2 class='title'>".$row['title']."</h2>"
             . "<p class='post-desc'>".$row['content']."</p>"
             . "<p class='poster'>".$row['author']."\n".date('dS F Y', strtotime($row['date_posted']))."</p></div>");
+    
     
 }
 	

@@ -59,8 +59,8 @@
                     <div class="left">
                         <h3 data-aos="fade-left">Iian Khor</h3>
                         <p data-aos="fade-left" class="profile-desc-right">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
-                            purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
+                            Admission Number: P1937406<br><br>
+                            Hey! I'm Iian and I made the website look how it is right now! I am also a self-driven achiever and am enthusiatic in meeting people that shares my passion in technology.
                         </p>
                     </div>
                 </div>
@@ -69,8 +69,8 @@
                     <div class="right">
                         <h3 data-aos="fade-right">Oliver Goh</h3>
                         <p data-aos="fade-right" class="profile-desc-left">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
-                            purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
+                            Admission Number: P1919488<br><br>
+                            I'm Oliver and I designed and overviewed the creation of this website! Other than that, I like to constantly challenge myself and seeking discomfort.
                         </p>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                     <div class="left">
                         <h3 data-aos="fade-left">Jerome Goh</h3>
                         <p data-aos="fade-left" class="profile-desc-right">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
-                            purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
+                            Admission Number: P1920600<br><br>
+                            Hello! I’m Jerome and I made the animations for this website. I am always trying to help people. This is why my team and I made this website to help the elderly with technology.
                         </p>
                     </div>
                 </div>
@@ -89,8 +89,8 @@
                     <div class="right">
                         <h3 data-aos="fade-right">Muhammad Rakin</h3>
                         <p data-aos="fade-right" class="profile-desc-left">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc nisi, elementum ac dictum a, gravida quis
-                            purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet.
+                            Admission Number: P1919855<br><br>
+                            HIYA I'm Rakin and I am in charge of the backend section of the website. The forum was specially made by me with love. I'm a really outgoing guy looking for a fun time.
                         </p>
                     </div>
                 </div>

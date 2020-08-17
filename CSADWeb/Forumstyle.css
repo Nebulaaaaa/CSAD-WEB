@@ -137,23 +137,29 @@ a:hover {
 }
 
 .container {
-    text-align:center;
+    text-align: center;
 }
 
-input {
-    top: 9.73%; 
-    bottom: 18.58%; 
-    width:500px;
-    height:50px;
-    background: #E8E8E8;
-    border: 2px solid #000000; 
+.search {
+    font-family: PopsReg;
+    width: 70vh;
+    height: 7vh;
+    background: #E0E0E0;
     box-sizing: border-box; 
-    border-radius: 50px; 
-    font-size: x-large;
-    text-align: justify;
+    border-radius: 5vh; 
+    font-size: 3vh;
+    padding: 4%;
+    border: none;
 }
 
 body {
     background-color: beige;
     background: linear-gradient(to right, #F7E7CE, #F7E7CE 33.33%, #ffd399 33.33%, #ffd399 66.66%, #F7E7CE 66.66%);
+}
+
+.searchbutton {
+    width: 6vh;
+    height: 6vh;
+    text-align: center;
+    vertical-align: middle;
 }

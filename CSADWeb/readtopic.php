@@ -14,9 +14,7 @@ if (isset($_GET['logout'])) {
         <meta charset="UTF-8">
         <title>Forums</title>
         <link href="Forumstyle.css" type="text/css" rel="stylesheet">
-        <link href="/CSADWeb/styles/main.css" type="text/css" rel="stylesheet" /> 
-       
-       
+        <link href="/CSADWeb/styles/main.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <header class="header">

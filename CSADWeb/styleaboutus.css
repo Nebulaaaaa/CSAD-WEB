@@ -28,11 +28,6 @@ html, body{
     margin: 0;
 }
 
-body {
-    position: relative;
-    min-height: 100%;
-}
-
 .header {
     background: linear-gradient(#F0F0F0, #FFFFFF, #F0F0F0);
 }
@@ -40,14 +35,13 @@ body {
 footer {
     background: #2D2D2D;
     width: 100%;
-    position: absolute;
 }   
 
 .wrapper {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto 140%; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto 5%;  /*the bottom margin is the negative value of the footer's height*/ 
 }
 
 .page-container {
@@ -192,6 +186,10 @@ a:hover {
 h3 {
     font-family: PopsBold;
     font-size: 5.5vh;
+}
+
+.profile-left, .profile-right {
+    min-height: 70vh;
 }
 
 .profile-desc-left, .profile-desc-right {

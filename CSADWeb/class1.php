@@ -52,6 +52,22 @@
 
     $avg = $total / $numR;
     
+    require 'files_class1.php';
+    $file = new files;
+    $images = $file->getFiles();
+    
+    if(isset($_POST['submit'])) {
+        $file->setName($_FILES['file']['name']);
+        $file->setType($_FILES['file']['type']);
+        $file->setSize($_FILES['file']['size']);
+        $file->setUploadedDate(date("Y-m-d"));
+        if($file->insert()) {
+            if(move_uploaded_file($_FILES['file']['tmp_name'], 'images_class1/' . $_FILES['file']['name'])) {
+                header('Location: class1.php');
+            }
+        }
+    }
+    
     $conn->close();
 ?>
 <!DOCTYPE html>
@@ -59,8 +75,22 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <link rel="stylesheet" href="styleclasses.css">
         <script src="https://kit.fontawesome.com/981eb9e0f8.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="jquery.bxslider.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="jquery.bxslider.js"></script>
+
+        <script>
+          $(document).ready(function(){
+            $('.slider').bxSlider({
+                speed: 100,
+                touchEnabled: true
+            });
+          });
+        </script>
+        
         <title>Windows 10 Essentials</title>
     </head>
     <body>
@@ -138,21 +168,33 @@
                     </div>
                 </div>
                 <div class="class-card">
-                    <div class="img-gallery">
-                        <img src="img/bottom-pic-1.jpg" alt="Windows10Essentials" class="class-1">
+                    <div class="slider img-gallery">
+                        <?php
+                            echo "<div class='image'><img src='images_class1/bottom-pic-1.jpg'></div>";
+                            foreach($images as $image) {
+                                echo "<div class='image'><img src='images_class1/" . $image["name"] . "'></div>";
+                            }
+                        ?>
                     </div>
-                    <div class="class-card-text-container">
-                        <div class="class-card-text">
-                            <div class="price">$50</div>
-                            <div class="includes">Includes</div>
-                            <div class="class-package">
-                                Weekly 2 hours lesson on available days
-                                Pre-paid Learning Materials
-                                Certificate of Completion
-                            </div>
-                            <div class="paypal-text">
-                                [You can pay for the class digitally or you can pay physically by coming to out establishment location. For more info, please check out our Contact Us page]
-                            </div>
+                    <form method="POST" action="" name="uploadFrm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="choose">Choose Image</div>
+                            <input type="file" name="file" id="file" class="file">
+                        </div>
+                        <button id="submit" name="submit" type="Submit" class="upload">Upload Image</button>
+                    </form>
+                </div>
+                <div class="class-card-text-container">
+                    <div class="class-card-text">
+                        <div class="price">$50</div>
+                        <div class="includes">Includes</div>
+                        <div class="class-package">
+                            Weekly 2 hours lesson on available days
+                            Pre-paid Learning Materials
+                            Certificate of Completion
+                        </div>
+                        <div class="paypal-text">
+                            [You can pay for the class digitally or you can pay physically by coming to out establishment location. For more info, please check out our Contact Us page]
                         </div>
                     </div>
                 </div>
@@ -192,7 +234,6 @@
                 </div>
             </section>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script>
             var ratedIndex = -1, uID = 0;
 

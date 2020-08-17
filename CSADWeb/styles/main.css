@@ -69,37 +69,21 @@ a {
     color: #0066FF;
 }
 
-input[type="submit"], button {
-}
-
-input[type="text"],input[type="password"] {
-    border-radius: 15px;
-    width: 200px;
-    padding: 7px;
-    font-family: Arial;
-    margin-top: 15px;
-    border: none;
-    background-color: #DFDFDF;
-}
-
+input,
 input[type="text"]:focus {
-    outline-width: 0;
-    outline-style: none;
+    outline: none;
 }
 
 input[type="password"]:focus {
-    outline-width: 0;
-    outline-style: none;
+    outline: none;
 }
 	
 input[type="submit"]:focus {
-    outline-width: 0;
-    outline-style: none;
+    outline: none;
 }	
 
 button:focus {
-    outline-width: 0;
-    outline-style: none;
+    outline: none;
 }	
 
 .forum-table-background {
@@ -407,7 +391,7 @@ p span {
     top: 0.5vh;
 }
 
-.login-text {
+.login-text, .no-topics-text {
     background: rgba(229, 229, 229, 0.7);
     padding: 5vh;
     margin-top: 15vh;
@@ -420,9 +404,26 @@ p span {
 input#topic {
     margin-left: 2vw;
     border-radius: 3vh;
-    width: fit-content;
     font-family: PopsReg;
     margin-top: 2vh;
     border: 0.2vh solid #000;
     background-color: #FFFFFF;
+}
+
+.post-content div {
+    padding: 1vh; 
+    font-family: PopsMed; 
+    font-size: 2.7vh; 
+    border-radius: 2vh; 
+    margin-right: 1%; 
+    margin-left: 1%; 
+    margin-top: -2%;
+    margin-bottom: 1%;
+}
+
+.topic-title-text {
+    height: 7vh;
+    min-width: 30%;
+    padding: 1%;
+    font-size: 3.5vh;
 }

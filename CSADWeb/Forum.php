@@ -20,7 +20,6 @@ and open the template in the editor.
         <title>Forums</title>
         <link href="Forumstyle.css" type="text/css" rel="stylesheet">
         <link href="/CSADWeb/styles/main.css" type="text/css" rel="stylesheet" />
-       
     </head>
     <body>
         <header class="header">
@@ -32,9 +31,6 @@ and open the template in the editor.
                         src="img/logo.png"
                         alt="logo"/>
                     </a>
-                </div>
-                <div class="container">
-                <input class="search" placeholder="Search Forum" >
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
@@ -50,8 +46,7 @@ and open the template in the editor.
                     <?php endif ?>
                 </ul>
             </nav>
-        </header>
-
+        </header>  
         <main>
             <?php dispcategories(); ?>
         </main>

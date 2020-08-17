@@ -21,7 +21,7 @@
     src: url('./fonts/PoppinsSemiBold.ttf')
 }
 
-html, body, main, section {
+html, body {
     font-family: PopsLight;
     height: 100%;
     width: 100%;
@@ -217,7 +217,7 @@ a:hover {
 }
 
 .class-card {
-    width: 25%;
+    width: 35%;
     background: #FFFFFF;
     border: 0.2vh solid rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
@@ -225,46 +225,50 @@ a:hover {
     display:inline-block;
     position: absolute;
     top: 4%;
-    margin-left: 18%;
+    margin-left: 10%;
 }
 
 .img-gallery img{
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 50%;
     display: block;
     padding-top: 6%;
     margin: 0 auto;
 }
 
 .class-card-text-container {
-    width: 80%;
+    width: 60%;
     height: 80%;
-    padding-top: 5%;
-    padding-bottom: 8%;
+    padding: 2%;
     margin: 0 auto;
+    margin-top: 2%;
+    background: #F3F3F3;
+    box-sizing: border-box;
+    border-radius: 2vh;
 }
 
 .price {
     height: 5vh;
     font-family: PopsBold;
-    font-size: 3.5vh;
+    font-size: 4vh;
 }
 
 .includes {
     font-family: PopsBold;
-    font-size: 2.8vh;
+    font-size: 3vh;
 }
 
 .class-package {
     font-family: PopsLight;
-    font-size: 2.4vh;
+    font-size: 3vh;
 }
 
 .button-container {
     width: 25%;
-    display: inline-block;
-    vertical-align: bottom;
-    margin-left: 18%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .enroll-now-1 {
@@ -272,7 +276,6 @@ a:hover {
     font-style: normal;
     font-weight: 600;
     font-size: 4vh;
-    padding-top: 5%;
     height: 12vh;
     width: 100%;
     background: radial-gradient(circle, #F1EFE1 0%, rgba(241, 239, 225, 0.8) 100%);
@@ -288,4 +291,29 @@ input[type="submit"]:focus {
 .paypal-text {
     font-family: PopsBold;
     font-size: 2vh;
+}
+
+.choose {
+    font-family: PopsMed;
+    font-size: 4vh;
+    margin-left: 5%;
+}
+
+.file {
+    margin-left: 5%;
+    display: inline-block;
+}
+
+.upload {
+    border: 0.4vh solid gray;
+    color: gray;
+    background-color: white;
+    padding: 0.8vh 2vh;
+    border-radius: 2vh;
+    font-family: PopsBold;
+    font-size: 4vh;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    float: left;
 }

@@ -16,20 +16,18 @@ if (isset($_GET['logout'])) {
         <link href="Forumstyle.css" type="text/css" rel="stylesheet">
         <link href="/CSADWeb/styles/main.css" type="text/css" rel="stylesheet" /> 
         <script src="//cdn.tinymce.com/4/tinymce.min.js" referrerpolicy="origin"></script>
-
         <script>
             tinymce.init({
                 selector: '#comment',
                 forced_root_block : 'div',
                 forced_root_block_attrs: {
-                    'class': 'main',
                     'style': 'font-family: PopsReg;' 
                 },
                 toolbar: " undo redo | removeformat | bold italic | link | alignleft aligncenter alignright alignjustify |",
                 menubar: false
             });
             function validate() {
-                if ((tinymce.EditorManager.get('comment').getContent()) == '' || (tinymce.EditorManager.get('content').getContent()) == null)) {
+                if ((tinymce.EditorManager.get('comment').getContent()) == '' || (tinymce.EditorManager.get('comment').getContent()) == null) {
                     alert('Comment can not be empty.');
                     return false;
                 }
@@ -47,20 +45,20 @@ if (isset($_GET['logout'])) {
                     </a>
                 </div>
                 <div class="container">
-                <input class="search" placeholder="Search Forum" >
+                    <input class="search" placeholder="Search Forum" >
                 </div>
                 <ul class="nav-links">
-                <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
-                <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
-                <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
-                
-                <?php  if (!isset($_SESSION['email'])) : ?>
-                    <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
-                <?php endif ?>
+                    <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
+                    <li><a href="aboutus.php" class="nav-link1 nav-link2">About Us</a></li>
+                    <li><a href="contactus.php" class="nav-link1 nav-link2">Contact Us</a></li>
 
-                <?php  if (isset($_SESSION['email'])) : ?>
-                    <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
-                <?php endif ?>
+                    <?php  if (!isset($_SESSION['email'])) : ?>
+                        <li><a href='login.php' class='nav-link1 nav-link2'>Login</a></li>
+                    <?php endif ?>
+
+                    <?php  if (isset($_SESSION['email'])) : ?>
+                        <li><a href="index.php?logout='1'" class='nav-link1 nav-link2'>Logout</a></li>
+                    <?php endif ?>
                 </ul>
             </nav>
         </header>  
@@ -80,7 +78,6 @@ if (isset($_GET['logout'])) {
                     replytopost($_GET['cid'], $_GET['scid'], $_GET['tid']);
                 }
             ?>
-            
         </main>
         <footer>
               <section class="footer-section">

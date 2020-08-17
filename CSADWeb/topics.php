@@ -1,6 +1,7 @@
 <?php 
 include ('content_function.php');
 include('server.php');
+include('dbcon.php');
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['email']);
@@ -12,9 +13,7 @@ if (isset($_GET['logout'])) {
         <meta charset="UTF-8">
         <title>Forums</title>
         <link href="Forumstyle.css" type="text/css" rel="stylesheet">
-        <link href="/CSADWeb/styles/main.css" type="text/css" rel="stylesheet" /> 
-       
-       
+        <link href="/CSADWeb/styles/main.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <header class="header">
@@ -28,7 +27,9 @@ if (isset($_GET['logout'])) {
                     </a>
                 </div>
                 <div class="container">
-                    <input class="search" placeholder="Search Forum" >
+                    <form method="post" action="topics.php">
+                        <input type="text" name="searchQuery" class="search" placeholder="Search Forum"><button name="search" style="border: none; background: none; text-align: center;"><img class="searchbutton" src="img/searchicon"/></button>
+                    </form>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.php #classlink" class="nav-link1 nav-link2">Classes</a></li>
@@ -44,7 +45,7 @@ if (isset($_GET['logout'])) {
                     <?php endif ?>
                 </ul>
             </nav>
-        </header>    
+        </header>  
         <main style="min-height: 100%;">
             <div>
                 <?php
@@ -60,7 +61,35 @@ if (isset($_GET['logout'])) {
                 }
             ?>
             <div class="content">
-                <?php disptopics($_GET['cid'], $_GET['scid']); ?>
+                <?php 
+                disptopics($_GET['cid'], $_GET['scid']); 
+                if (isset($_POST['search'])) {
+                    $query = "SELECT * FROM topics WHERE (title LIKE '%".$_POST['searchQuery']."%') ORDER BY topic_id DESC";
+                    $result = mysqli_query($db, $query);
+                    echo "<table class='topic-table topic-table-background'>";
+                    echo "<tr>"
+                        . "<th class='topics-table-title'>Title</th>"
+                        . "<th class='topics-table-posted'>Posted By</th>"
+                        . "<th class='topics-table-date'>Date Posted</th>"
+                        . "<th class='topics-table-views'>Views</th>"
+                        . "<th class='topics-table-replies'>Replies</th></tr>";
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                        $cid = $row['category_id'];
+                        $scid = $row['subcategory_id'];
+                        var_dump($scid);
+                        echo "<tr class='topics-table-content'>"
+                        . "<td style='text-align: left;'><a href='/CSADWeb/readtopic.php?cid=".$cid."&scid=".$scid."&tid=".$row['topic_id']."'>
+                        ".$row['title']."</a></td>"
+                                . "<td>".$row['author']."</td>"
+                                . "<td>".date('dS F Y', strtotime($row['date_posted']))."</td>"
+                                . "<td>".$row['views']."</td>"
+                                . "<td>".$row['replies']."</td>"
+                                . "</tr>";
+                    }
+                    echo "</table>";
+                }
+                ?>
             </div>
         </main>
         <footer>
